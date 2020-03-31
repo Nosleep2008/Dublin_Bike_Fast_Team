@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <div id="test"></div>
+    <div id="information"></div>
+    <script>
+// Initialize and add the map
+var stations = {{stations|tojson}};
+function initMap() {
+  // The location of Uluru
+  var uluru = {lat: 53.3450475,lng: -6.266618};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 12, center: uluru});
+  // The marker, positioned at Uluru
+ // var marker = new google.maps.Marker({position: uluru, map: map});   
+  for (var i = 0; i<stations.length ; i++){
+               	  var position = stations[i][0].split(",");
+                  var name = stations[i][4];
+                  var number = stations[i][2];
+				  var lati = Number(position[0]);
+				  var lngt = Number(position[1]);
+				  var red = {lat: lati, lng: lngt}
+				  var infowindow = new google.maps.InfoWindow({
+                      content: "Loading..."
+                  });
+                  var marker = new google.maps.Marker({
+                      //position for each marker
+                      position: red,
+                      map: map,
+                      info: '('+stations[i][0]+')'
+                      
+                  });
+				  google.maps.event.addListener(marker, "click", function () {
+				      //use the variable "info" we populated earlier
+				      console.log(this.info)
+				      var p_data = {
+    						"position": this.info
+						};
+				      window.info;
+				      window.th;
+				      window.th = this;
+				      window.info = this.info;
+				    		$.ajax({
+				    		    type: 'POST',
+				    		    url: '/check_rest',
+				    		    data: JSON.stringify(p_data),
+				    		    contentType: 'application/json; charset=UTF-8',
+				    		    dataType: 'json',
+				    		    success: function(data) {
+				    		    	console.log(data);
+				    		    	var b = $.isEmptyObject(data);
+				    		    	if(b){
+				    		    		info = "Position is "+window.info+" NO information about this station";
+				    		    	}
+				    		    	else{
+				    		    		info = "This Station now have : "+data[0][2]+" available bike stands"+" \n "+"This Station now have : "+data[0][3]+" available bikes";
+				    		    	}
+				    		    	
+				    		    	
+				    		    	document.getElementById("information").innerHTML = info;
+				    		    },
+				    		    error: function(xhr, type) {
+				    		    	info = "Position is "+window.info+" NO information about this station";
+				    		    	document.getElementById("information").innerHTML = info;
+				    		    }
+				    		});
+				    		
+				    		infowindow.setContent(this.info);
+						    infowindow.open(map, this);
+				  });
+
+              }
+  
+	}
+</script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFJziVkEvhTBxI1JZ_sznFA_Kbm7FWLAM&callback=initMap">
+    </script>
+    
+  </body>
+</html>
