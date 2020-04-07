@@ -54,9 +54,9 @@ def update_dynamic(lines):
     cursor = db.cursor()
     for text in lines:
         position = str(text['position']['lat']) + "," + str(text['position']['lng'])
-        sql = "UPDATE dynamic_data SET status = %s, bike_stands = %s ,available_bike_stands = %s ,available_bikes = %s ,last_update = %s  WHERE position = %s"
+        #sql = "UPDATE dynamic_data SET status = %s, bike_stands = %s ,available_bike_stands = %s ,available_bikes = %s ,last_update = %s  WHERE position = %s"
         value=(text['status'],text['bike_stands'],text['available_bike_stands'],text['available_bikes'],text['last_update'],position)
-        #sql="insert into dynamic_data(status,bike_stands,available_bike_stands,available_bikes,last_update,position) values (%s,%s,%s,%s,%s,%s)"
+        sql="insert into dynamic_data(status,bike_stands,available_bike_stands,available_bikes,last_update,position) values (%s,%s,%s,%s,%s,%s)"
         cursor = db.cursor()
         cursor.execute(sql,value)
         db.commit()
@@ -89,8 +89,9 @@ def update_weather():
         
         text = get_weather(lat,lng)
         currentDT = datetime.datetime.now()
-        sql = "UPDATE weather SET temperature = %s, wind_speed = %s ,cloudiness = %s ,pressure = %s ,humidity = %s ,time = %s WHERE address = %s"
+        #sql = "UPDATE weather SET temperature = %s, wind_speed = %s ,cloudiness = %s ,pressure = %s ,humidity = %s ,time = %s WHERE address = %s"
         #sql="update weather(address,temperature,wind_speed,cloudiness,pressure,humidity,time) values (%s,%s,%s,%s,%s,%s,%s)"
+        sql="insert into weather(address,temperature,wind_speed,cloudiness,pressure,humidity,time) values (%s,%s,%s,%s,%s,%s,%s)"
         value=(text['main']['temp'],text['wind']['speed'],text['clouds']['all'],text['main']['pressure'],text['main']['humidity'],currentDT,address)
         cursor = db.cursor()
         cursor.execute(sql,value)

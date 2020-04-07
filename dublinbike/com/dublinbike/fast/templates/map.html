@@ -10,14 +10,88 @@
     </style>
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script  src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>  
+ 	<link rel="stylesheet" href="../static/css/bootstrap.min.css" /> 
   </head>
   <body>
-    <h3>My Google Maps Demo</h3>
+    <div>
+			<img src="../static/img/logo.jpg" width="100%"  height="100px" class="img-rounded">
+		</div>
+		<nav class="navbar navbar-default " role="navigation">
+		    <div class="container-fluid">
+		    <div class="navbar-header">
+		        <a class="navbar-brand" href="#">Dublin Bikes</a>
+		    </div>
+		    <div>
+		        <ul id="mytab" class="nav navbar-nav " role= "tablist">
+		            <li role="presentation" class="active"><a href="">Home</a></li>
+		            <li role="presentation" ><a href="">Information</a></li>
+		            <li role="presentation" ><a href="">Contact us</a></li>
+		            
+		        </ul>
+				<ul class="nav navbar-nav navbar-right"> 
+				            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Register</a></li> 
+				            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> 
+				</ul> 
+		    </div>
+		    </div>
+		</nav>
     <!--The div element for the map -->
-    <div id="map"></div>
-    <div id="test"></div>
-    <div id="information"></div>
-    <script>
+   
+    
+	<div id="main" style="width: 100%;">
+			
+		<div id="left" style="width: 75%; float: left;" class="container">
+			 <div id="map"></div>
+   			 
+   			 
+   			 <div id="ch" style="width: 80%;height: 40%;">
+				<canvas id="line-chart-week"></canvas>
+			 </div>
+			 <div id="ch2" style="width: 80%;height: 40%;">
+				<canvas id="line-chart-day"></canvas>
+			 </div>
+		</div>
+		<div id="right" style="width: 25%; float: left;" class="panel panel-info">
+		    <div class="panel-heading">Stations Information</div>
+		    <div class="panel-body">
+		       <div id="information"></div>
+		    </div>
+		    <ul class="list-group">
+		        <li class="list-group-item"><div id="chart"></div></li>
+		        <li class="list-group-item">Bike</li>
+		        <li class="list-group-item">Bike</li>
+		        <li class="list-group-item">Bike</li>
+		        <li class="list-group-item">Bike</li>
+				<li class="list-group-item">Bike</li>
+		    </ul>
+		</div>
+		
+		</div>
+		<div> <img src="../static/img/Dublin_Bikes.jpg" width="25%" /> </div>
+		
+		<div class="jumbotron text-center" style="width: 100%;  height: 200px; clear:both; margin-bottom:0">
+		  <p>Copyright: Group4 </p>
+		  <p>3/April/2020 </p>
+		  <div>
+			  <a href="1"><img src="../static/img/facebook_4202110.png" class="img-circle" hspace="20"></a>
+			  <a href="1"><img src="../static/img/iconfinder_62-instagram_4202090.png" class="img-circle" hspace="20"></a>
+			  <a href="1"><img src="../static/img/github_2_2993772.png" class="img-circle" hspace="20"></a></a>
+			  <a href="1"><img src="../static/img/6-twitter_4102580.png" class="img-circle" hspace="20"></a>
+			  <a href="1"><img src="../static/img/_Youtube_4362951.png" class="img-circle" hspace="20"></a>
+		  </div>
+		</div>
+	<script>
+		$("#mytab a").click(function(e){
+			e.preventDefault();
+			$(this).tab("show");
+		})
+	</script>	
+	
+	
+	
+	
+<script>
 // Initialize and add the map
 var stations = {{stations|tojson}};
 function initMap() {
@@ -30,8 +104,9 @@ function initMap() {
  // var marker = new google.maps.Marker({position: uluru, map: map});   
   for (var i = 0; i<stations.length ; i++){
                	  var position = stations[i][0].split(",");
-                  var name = stations[i][4];
-                  var number = stations[i][2];
+                  var name = stations[i][3];
+                  var number = stations[i][1];
+                  console.log(number)
 				  var lati = Number(position[0]);
 				  var lngt = Number(position[1]);
 				  var red = {lat: lati, lng: lngt}
@@ -42,12 +117,14 @@ function initMap() {
                       //position for each marker
                       position: red,
                       map: map,
-                      info: '('+stations[i][0]+')'
+                      info: '('+stations[i][0]+')',
+                      number: number
                       
                   });
 				  google.maps.event.addListener(marker, "click", function () {
 				      //use the variable "info" we populated earlier
 				      console.log(this.info)
+				      console.log(this.number)
 				      var p_data = {
     						"position": this.info
 						};
@@ -55,6 +132,7 @@ function initMap() {
 				      window.th;
 				      window.th = this;
 				      window.info = this.info;
+				      window.number = this.number;
 				    		$.ajax({
 				    		    type: 'POST',
 				    		    url: '/check_rest',
@@ -62,20 +140,19 @@ function initMap() {
 				    		    contentType: 'application/json; charset=UTF-8',
 				    		    dataType: 'json',
 				    		    success: function(data) {
-				    		    	console.log(data);
 				    		    	var b = $.isEmptyObject(data);
 				    		    	if(b){
-				    		    		info = "Position is "+window.info+" NO information about this station";
+				    		    		info = "<h3>Position is "+window.info+" NO information about this station</h3>"+'<button type="button" onclick="displayChart('+window.number+')">displayChart_Weekly</button>'+'<button type="button" onclick="displayChart_Daily('+window.number+')">displayChart_Daily</button>';
 				    		    	}
 				    		    	else{
-				    		    		info = "This Station now have : "+data[0][2]+" available bike stands"+" \n "+"This Station now have : "+data[0][3]+" available bikes";
+				    		    		info = "This Station now have : "+data[0][2]+" available bike stands"+" <br> "+"This Station now have : "+data[0][3]+" available bikes"+'<button type="button" onclick="displayChart('+window.number+')">displayChart_Weekly</button>'+'<button type="button" onclick="displayChart_Daily('+window.number+')">displayChart_Daily</button>';
 				    		    	}
 				    		    	
 				    		    	
 				    		    	document.getElementById("information").innerHTML = info;
 				    		    },
 				    		    error: function(xhr, type) {
-				    		    	info = "Position is "+window.info+" NO information about this station";
+				    		    	info = "Position is "+window.info+" NO information about this station"+'<button type="button" onclick="displayChart('+window.number+')">displayChart_Weekly</button>'+'<button type="button" onclick="displayChart_Daily('+window.number+')">displayChart_Daily</button>';
 				    		    	document.getElementById("information").innerHTML = info;
 				    		    }
 				    		});
@@ -91,6 +168,154 @@ function initMap() {
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFJziVkEvhTBxI1JZ_sznFA_Kbm7FWLAM&callback=initMap">
     </script>
+    
+    <script>
+		
+	function PlotChart(data_dic){
+		new Chart(document.getElementById("line-chart-week"), {
+		  type: 'line',
+		  data: {
+		    labels: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+		    datasets: [{ 
+		        data: [data_dic[0][0],data_dic[1][0],data_dic[2][0],data_dic[3][0],data_dic[4][0],data_dic[5][0],data_dic[6][0]],
+		        label: "Available Stands",
+		        borderColor: "#3e95cd",
+		        fill: false
+		      }, { 
+		        data: [data_dic[0][1],data_dic[1][1],data_dic[2][1],data_dic[3][1],data_dic[4][1],data_dic[5][1],data_dic[6][1]],
+		        label: "Available Bikes",
+		        borderColor: "#8e5ea2",
+		        fill: false
+		      }
+		    ]
+		  },
+		  options: {
+		    title: {
+		      display: true,
+		      text: 'Weekly Data'
+		    }
+		  }
+		});   
+		
+	}
+		</script>
+		
+		
+		<script>
+		
+	function PlotChart_daily(data_dic){
+		new Chart(document.getElementById("line-chart-day"), {
+		  type: 'line',
+		  data: {
+		    labels: ['0h','1h','2h','3h','4h','5h','6h','7h','8h','9h','10h','11h','12h','13h','14h','15h','16h','17h','18h','19h','20h','21h','22h','23h'],
+		    datasets: [{ 
+		        data: [data_dic[0][0],data_dic[1][0],data_dic[2][0],data_dic[3][0],data_dic[4][0],data_dic[5][0],data_dic[6][0],data_dic[7][0],data_dic[8][0],data_dic[9][0],data_dic[10][0],data_dic[11][0],data_dic[12][0],data_dic[12][0],data_dic[13][0],data_dic[14][0],data_dic[15][0],data_dic[16][0],data_dic[17][0],data_dic[18][0],data_dic[19][0],data_dic[20][0],data_dic[21][0],data_dic[22][0],data_dic[23][0]],
+		        label: "Available Stands",
+		        borderColor: "#3e95cd",
+		        fill: false
+		      }, { 
+		        data: [data_dic[0][1],data_dic[1][1],data_dic[2][1],data_dic[3][1],data_dic[4][1],data_dic[5][1],data_dic[6][1],data_dic[7][1],data_dic[8][1],data_dic[9][1],data_dic[10][1],data_dic[11][1],data_dic[12][1],data_dic[12][1],data_dic[13][1],data_dic[14][1],data_dic[15][1],data_dic[16][1],data_dic[17][1],data_dic[18][1],data_dic[19][1],data_dic[20][1],data_dic[21][1],data_dic[22][1],data_dic[23][1]],
+		        label: "Available Bikes",
+		        borderColor: "#8e5ea2",
+		        fill: false
+		      }
+		    ]
+		  },
+		  options: {
+		    title: {
+		      display: true,
+		      text: 'Daily Data'
+		    }
+		  }
+		});   
+		
+	}
+		</script>
+		
+		
+    
+    
+    <script>
+    function displayChart(number){
+    	document.getElementById("chart").innerHTML = "Loading weekly data... The Station " + number;
+    	
+    	var p_data = {
+				"number": number
+			};
+    	$.ajax({
+		    type: 'POST',
+		    url: '/check_weekly',
+		    data: JSON.stringify(p_data),
+		    contentType: 'application/json; charset=UTF-8',
+		    dataType: 'json',
+		    success: function(data_dic) {
+		    	var b = $.isEmptyObject(data_dic);
+		    	if(b){
+		    		info = 'failure'
+		    	}
+		    	else{
+		    		info = 'success'
+		    		console.log(data_dic)
+		    		PlotChart(data_dic)
+		    	}
+		    	
+		    },
+		    error: function(xhr, type) {
+		    	info = 'error'
+		    	document.getElementById("chart").innerHTML = info;
+		    }
+		    
+		    
+		    
+		    
+		    
+		});
+    }
+    
+    </script>
+    
+    <script>
+    function displayChart_Daily(number){
+    	document.getElementById("chart").innerHTML = "Loading daily data... The Station " + number;
+    	
+    	var p_data = {
+				"number": number
+			};
+    	$.ajax({
+		    type: 'POST',
+		    url: '/check_daily',
+		    data: JSON.stringify(p_data),
+		    contentType: 'application/json; charset=UTF-8',
+		    dataType: 'json',
+		    success: function(data_dic) {
+		    	var b = $.isEmptyObject(data_dic);
+		    	if(b){
+		    		info = 'failure'
+		    	}
+		    	else{
+		    		info = 'success'
+		    		console.log(data_dic)
+		    		PlotChart_daily(data_dic)
+		    	}
+		    	
+		    },
+		    error: function(xhr, type) {
+		    	info = 'error'
+		    	document.getElementById("chart").innerHTML = info;
+		    }
+		    
+		    
+		    
+		    
+		    
+		});
+    }
+    
+    </script>
+    
+    
+    
+	
     
   </body>
 </html>

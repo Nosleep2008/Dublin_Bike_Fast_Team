@@ -10,8 +10,9 @@ import time
 from IPython.display import display
 import pandas as pd
 import pymysql
-import datetime
+from datetime import datetime
 from flask import Flask,url_for, g, jsonify,render_template, request
+from _operator import length_hint
 app = Flask(__name__)
 '''
 Created on Mar 24, 2020
@@ -40,10 +41,27 @@ def map():
 
 @app.route('/check_rest',methods=['POST'])
 def check_rest():
-    position = request.get_json()
-    print(position)
-    position = position['position']
+    recieve_data = request.get_json()
+    print(recieve_data)
+    position = recieve_data['position']
     data = get_dynamic(position)
+    return data
+
+@app.route('/check_weekly',methods=['POST'])
+def check_weekly():
+    recieve_data = request.get_json()
+    print(recieve_data)
+    number = recieve_data['number']
+    data = get_weekly(number)
+    return data
+
+
+@app.route('/check_daily',methods=['POST'])
+def check_daily():
+    recieve_data = request.get_json()
+    print(recieve_data)
+    number = recieve_data['number']
+    data = get_daily(number)
     return data
 
 def get_static():
@@ -65,6 +83,76 @@ def get_dynamic(position):
     data = cursor.fetchall()
     cursor.close()
     return jsonify(data)
+
+def get_weekly(number):
+    db = pymysql.connect("dbike.cerj203fcxcq.eu-west-1.rds.amazonaws.com", "yuhao", "qwert2008", "dbike")
+    cursor = db.cursor()
+    sql="SELECT * FROM dbike.daily_data where `number` = " + str(number) + " group by last_update;"
+    cursor.execute(sql)
+    db.commit()
+    data = cursor.fetchall()
+    cursor.close()
+    length = len(data)
+    dic_stand = {'0':[],'1':[],'2':[],'3':[],'4':[],'5':[],'6':[]}
+    dic_bike = {'0':[],'1':[],'2':[],'3':[],'4':[],'5':[],'6':[]}
+    dic = {'0':[],'1':[],'2':[],'3':[],'4':[],'5':[],'6':[]}
+    i = 0
+    while i < length:
+        time = data[i][4]
+        available_bike_stands = data[i][2]
+        available_bikes = data[i][3]
+        week = datetime.strptime(time,"%Y-%m-%d %H:%M:%S").weekday()
+        dic_stand[str(week)].append(available_bike_stands)
+        dic_bike[str(week)].append(available_bikes)
+        i = i + 1
+        
+    for i in range(0,7):
+        dic_stand[str(i)] = Get_Average(dic_stand[str(i)])
+        print(dic_stand[str(i)])
+        dic_bike[str(i)] = Get_Average(dic_bike[str(i)])
+        print(dic_bike[str(i)])
+        dic[str(i)] = [dic_stand[str(i)], dic_bike[str(i)]]
+    return jsonify(dic)
+
+def get_daily(number):
+    db = pymysql.connect("dbike.cerj203fcxcq.eu-west-1.rds.amazonaws.com", "yuhao", "qwert2008", "dbike")
+    cursor = db.cursor()
+    sql="SELECT * FROM dbike.daily_data where `number` = " + str(number) + " group by last_update;"
+    cursor.execute(sql)
+    db.commit()
+    data = cursor.fetchall()
+    cursor.close()
+    length = len(data)
+    dic_stand = {'0':[],'1':[],'2':[],'3':[],'4':[],'5':[],'6':[],'7':[],'8':[],'9':[],'10':[],'11':[],'12':[],'13':[],'14':[],'15':[],'16':[],'17':[],'18':[],'19':[],'20':[],'21':[],'22':[],'23':[]}
+    dic_bike = {'0':[],'1':[],'2':[],'3':[],'4':[],'5':[],'6':[],'7':[],'8':[],'9':[],'10':[],'11':[],'12':[],'13':[],'14':[],'15':[],'16':[],'17':[],'18':[],'19':[],'20':[],'21':[],'22':[],'23':[]}
+    dic = {'0':[],'1':[],'2':[],'3':[],'4':[],'5':[],'6':[],'7':[],'8':[],'9':[],'10':[],'11':[],'12':[],'13':[],'14':[],'15':[],'16':[],'17':[],'18':[],'19':[],'20':[],'21':[],'22':[],'23':[]}
+    i = 0
+    while i < length:
+        time = data[i][4]
+        available_bike_stands = data[i][2]
+        available_bikes = data[i][3]
+        hour = datetime.strptime(time,"%Y-%m-%d %H:%M:%S").hour
+        dic_stand[str(hour)].append(available_bike_stands)
+        dic_bike[str(hour)].append(available_bikes)
+        i = i + 1
+        
+    for i in range(0,24):
+        dic_stand[str(i)] = Get_Average(dic_stand[str(i)])
+        print(dic_stand[str(i)])
+        dic_bike[str(i)] = Get_Average(dic_bike[str(i)])
+        print(dic_bike[str(i)])
+        dic[str(i)] = [dic_stand[str(i)], dic_bike[str(i)]]
+    return jsonify(dic)
+
+
+
+
+
+def Get_Average(li):
+    s = 0
+    for item in li:     
+        s += int(item)  
+    return s/len(li)        
 
 
 if __name__ == "__main__":
