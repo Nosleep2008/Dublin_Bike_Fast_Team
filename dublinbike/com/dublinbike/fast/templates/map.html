@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+	 <title>Home</title>
     <style>
        /* Set the size of the div element that contains the map */
       #map {
@@ -12,9 +13,32 @@
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script  src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>  
  	<link rel="stylesheet" href="../static/css/bootstrap.min.css" /> 
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- bootstrap-css -->
+	<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<!--// bootstrap-css -->
+	<!-- css -->
+	<link rel="stylesheet" href="../static/css/style.css" type="text/css" media="all" />
+	<!--// css -->
+	
+	<!-- font-awesome icons -->
+	<link href="../static/css/font-awesome.css" rel="stylesheet"> 
+	<!-- //font-awesome icons -->
+	<!-- font -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+	<!-- //font -->
+	<script src="../static/js/jquery-1.11.1.min.js"></script>
+	<script src="../static/js/bootstrap.js"></script>
+	<script src="../static/js/SmoothScroll.min.js"></script>
+	<script src="../static/js/jarallax.js"></script>
   </head>
   <body>
-    <div>
+    <!-- <div>
 			<img src="../static/img/logo.jpg" width="100%"  height="100px" class="img-rounded">
 		</div>
 		<nav class="navbar navbar-default " role="navigation">
@@ -35,42 +59,461 @@
 				</ul> 
 		    </div>
 		    </div>
-		</nav>
+		</nav> -->
     <!--The div element for the map -->
-   
-    
-	<div id="main" style="width: 100%;">
+    <!-- banner -->
+    	<div class="banner">
+    		
+    		<div class="w3ls-slider">
+    			<div class="header-top">
+    				<div class="container banner-drop">
+    					<div class="agile-logo">
+    						<h1><a href="index.html">Dublin<span>Bike</span></a></h1>
+    					</div>
+    					<div class="header-right">
+    							<nav>
+    							  <ul>
+    								<li class="active">
+    									<a href="index.html"><span>Home</span></a>
+    								</li>
+    								<li>
+    									<a href="about.html"><span>About</span></a>
+    								</li>
+    								<li>
+    									<a href="short-codes.html"><span>Short Codes</span></a>
+    								</li>
+    								<li>
+    									<a href="gallery.html"><span>Gallery</span></a>
+    								</li>
+    								<li>
+    									<a href="training.html"><span>Training</span></a>
+    								</li>
+    								<li>
+    									<a href="mail.html"><span>Mail Us</span></a>
+    								</li>
+    							  </ul>
+    							</nav>
+    							<div class="menu-icon"><span></span></div>
+    					</div>
+    					<div class="clearfix"> </div>
+    					<script>
+    						(function($){
+    						  $(".menu-icon").on("click", function(){
+    								$(this).toggleClass("open");
+    								$(".container").toggleClass("nav-open");
+    								$("nav ul li").toggleClass("animate");
+    						  });
+    						  
+    						})(jQuery);
+    					</script>
+    				</div>
+    			</div>
+    					<div class="page-header__content">
+    						<div class="text-bg">
+    							<svg>
+    								<defs>
+    									<mask id="mask" x="0" y="0" width="100%" height="100%">
+    										<rect id="alpha" x="0" y="0" width="100%" height="100%"/>
+    										<text id="title1" x="50%" y="30%" dy="1em" letter-spacing="0.02em">Bike</text>
+    									</mask>
+    									<mask id="mask-2" x="0" y="0" width="100%" height="100%">
+    										<rect id="alpha-2" x="-66%" y="0" width="85%" height="100%" transform="skewX(40)"/>
+    										<text id="title2" x="50%" y="30%" dy="1em" letter-spacing="0.02em">Bike</text>
+    									</mask>
+    									<mask id="mask-3" x="0" y="0" width="100%" height="100%">
+    										<rect id="alpha-3" x="-66%" y="0" width="70%" height="100%" transform="skewX(40)"/>
+    										<text id="title3" x="50%" y="30%" dy="1em" letter-spacing="0.02em">Bike</text>
+    									</mask>
+    								</defs>
+    								<rect id="base" x="0" y="0" width="100%" height="100%" mask="url(#mask)"/>
+    								<rect id="base-3" x="0" y="0" width="100%" height="100%" mask="url(#mask-2)"/>
+    								<rect id="base-4" x="0" y="0" width="100%" height="100%" mask="url(#mask-3)"/>
+    								<text id="title4" x="50%" y="30%" dy="1em" letter-spacing="0.02em">Bike</text>
+    							</svg>
+    						</div>
+    					</div>
+    				<div class="w3l-banner-grids">
+    					<div class="container">
+    						<div class="slider">
+    							<div class="callbacks_container">
+    								<ul class="rslides" id="slider4">
+    									<li>
+    										<div class="w3ls-text">
+    											<p>Every station has a minimum of 15 stands</p>
+    											<a href="about.html">More</a>
+    										</div>
+    									</li>
+    									<li>
+    										<div class="w3ls-text">
+    											<p>All terminals accept an Annual Card</p>
+    											<a href="about.html">More</a>
+    										</div>
+    									</li>
+    									<li>
+    										<div class="w3ls-text">
+    											<p>Locking system protect bikes</p>
+    											<a href="about.html">More</a>
+    										</div>
+    									</li>
+    									<li>
+    										<div class="w3ls-text">
+    											<p>It is easy to enjoy the service</p>
+    											<a href="about.html">More</a>
+    										</div>
+    									</li>
+    									<li>
+    										<div class="w3ls-text">
+    											<p>A number of terminals have credit card facilities</p>
+    											<a href="about.html">More</a>
+    										</div>
+    									</li>
+    									<li>
+    										<div class="w3ls-text">
+    											<p>enabling you to purchase a 3 Day Ticket</p>
+    											<a href="about.html">More</a>
+    										</div>
+    									</li>
+    								</ul>
+    							</div>
+    							<script src="../static/js/responsiveslides.min.js"></script>
+    							<script>
+    								// You can also use "$(window).load(function() {"
+    								$(function () {
+    								  // Slideshow 4
+    								  $("#slider4").responsiveSlides({
+    									auto: true,
+    									pager:true,
+    									nav:false,
+    									speed: 500,
+    									namespace: "callbacks",
+    									before: function () {
+    									  $('.events').append("<li>before event fired.</li>");
+    									},
+    									after: function () {
+    									  $('.events').append("<li>after event fired.</li>");
+    									}
+    								  });
+    							
+    								});
+    							 </script>
+    							<!--banner Slider starts Here-->
+    						</div>
+    					</div>
+    				</div>
+    		</div>
+    		<div class="social-grids">
+    			<div class="container">
+    				<div class="agileinfo-social-grids">
+    					<ul>
+    						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+    						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+    						<li><a href="#"><i class="fa fa-rss"></i></a></li>
+    						<li><a href="#"><i class="fa fa-vk"></i></a></li>
+    					</ul>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    	<!-- //banner -->
+    	
+    	<!-- services -->
+    	<div class="services">
+    		<div class="container">
+    			<div class="w3layouts-services-heading">
+    				<h2>Our Services</h2>
+    			</div>
+    			<div class="w3-services-grids">
+    				<div class="col-md-3 w3l-services-grid">
+    					<div class="w3ls-services-img">
+    						<i class="fa fa-male" aria-hidden="true"></i>
+    					</div>
+    					<div class="agileits-services-info">
+    						<h4>Hiring a dublinbike</h4>
+    						<p>Log in at the terminal using your Just Eat dublinbikes Annual Card, associated Leap Card or your 3 Day Ticket.
+    Enter your PIN and select an available bike on screen, you then have 60 seconds to press the unlocking button on the stand of the bike you have chosen. Once you have pressed the button you have 5 seconds to remove the bike from the stand.</p>
+    					</div>
+    				</div>
+    				<div class="col-md-3 w3l-services-grid">
+    					<div class="w3ls-services-img">
+    						<i class="fa fa-bicycle" aria-hidden="true"></i>
+    					</div>
+    					<div class="agileits-services-info">
+    						<h4>Bikes</h4>
+    						<p>Look out for the distinctive dublinbikes in Dublin city: easy to handle and robust, they are specially designed for city use. </p>
+    					</div>
+    				</div>
+    				<div class="col-md-3 w3l-services-grid">
+    					<div class="w3ls-services-img">
+    						<i class="fa fa-cog" aria-hidden="true"></i>
+    					</div>
+    					<div class="agileits-services-info">
+    						<h4>Station Terminal</h4>
+    						<p>There is a terminal at every station. All terminals accept an Annual Card, an associated Leap Card or a 3 Day Ticket. A number of terminals have credit card facilities enabling you to purchase a 3 Day Ticket. </p>
+    					</div>
+    				</div>
+    				<div class="col-md-3 w3l-services-grid">
+    					<div class="w3ls-services-img">
+    						<i class="fa fa-female" aria-hidden="true"></i>
+    					</div>
+    					<div class="agileits-services-info">
+    						<h4>Returning a dublinbike</h4>
+    						<p>When you have completed your journey simply locate the nearest station with available stands. An audio signal of 2 beeps and a green indicator light on the stand confirm that the bike is locked correctly and your usage is complete. If there are no available stands at the station, use the terminal to locate a nearby station with availability and Just Eat dublinbikes will give you 15 minutes free of charge to get there.</p>
+    					</div>
+    				</div>
+    				<div class="clearfix"> </div>
+    			</div>
+    		</div>
+    	</div>
+    	<!-- //services -->
+    	
+    	
+    	<!-- history -->
+    	<div class="jarallax history">
+    		<div class="container">
+    			<div class="agileinfo-history-grids">
+    				<div class="slider">
+    					<div class="callbacks_container">
+    						<ul class="rslides" id="slider3">
+    							<li>
+    								<div class="wthree-history-info">
+    									<h4>What can I do to avoid ‘Card Clashes’?</h4>
+    									<p>When taking out a bike at a station terminal Just Eat dublinbikes card holders should hold their associated card (Bike-share membership card or LEAP Card) up to the card reader on its own, and not in a wallet or purse containing other cards to avoid potential ‘card clashes.’</p>
+    									<a href="about.html">Read More</a>
+    								</div>
+    							</li>
+    							<li>
+    								<div class="wthree-history-info">
+    									<h4>Will I use www.leapcard.ie for any service relating to dublinbikes?</h4>
+    									<p>No. For convenience LEAP Card just allows you to use the one card for journeys taken on covered public transport modes and the bike-share scheme.</p>
+    									<a href="about.html">Read More</a>
+    								</div>
+    							</li>
+    							<li>
+    								<div class="wthree-history-info">
+    									<h4>Can dublinbikes affect the balance on my Leap Card e-purse?</h4>
+    									<p>Dublinbikes has no access whatsoever to the e-purse on your Leap Card. You cannot make payments to dublinbikes via your Leap Card. The card is used solely for identification purposes to identify the holder as the dublinbikes account holder in conjunction with your PIN.</p>
+    									<a href="about.html">Read More</a>
+    								</div>
+    							</li>
+    						</ul>
+    					</div>
+    				</div>
+    				<script>
+    								// You can also use "$(window).load(function() {"
+    								$(function () {
+    								  // Slideshow 4
+    								  $("#slider3").responsiveSlides({
+    									auto: true,
+    									pager:false,
+    									nav:false,
+    									speed: 500,
+    									namespace: "callbacks",
+    									before: function () {
+    									  $('.events').append("<li>before event fired.</li>");
+    									},
+    									after: function () {
+    									  $('.events').append("<li>after event fired.</li>");
+    									}
+    								  });
+    							
+    								});
+    							 </script>
+    							<!--banner Slider starts Here-->
+    			</div>
+    		</div>
+    		<script type="text/javascript">
+    			/* init Jarallax */
+    			$('.jarallax').jarallax({
+    				speed: 0.5,
+    				imgWidth: 1366,
+    				imgHeight: 768
+    			})
+    		</script>
+    	</div>
+    	<!-- //history -->
+    	
+    	<!-- map -->
+    	<div class="container">
+    		<div class="w3layouts-services-heading">
+    			<h2>Bike Map</h2>
+    		</div>
+			<div id="main" style="width: 100%;">
+					
+				<div id="left" style="width: 75%; float: left;" class="container">
+					 <div id="map"></div>
+					 
+					 
+					 <div id="ch" style="width: 80%;height: 40%;">
+						<canvas id="line-chart-week"></canvas>
+					 </div>
+					 <div id="ch2" style="width: 80%;height: 40%;">
+						<canvas id="line-chart-day"></canvas>
+					 </div>
+				</div>
+				<div id="right" style="width: 25%; float: left;" class="panel panel-info">
+				    <div class="panel-heading">Stations Information</div>
+				    <div class="panel-body">
+				       <div id="information"></div>
+				    </div>
+				    <ul class="list-group">
+				        <li class="list-group-item"> </li>
+				        <li class="list-group-item"> </li>
+				        <li class="list-group-item"> </li>
+				        <li class="list-group-item"> </li>
+				        <li class="list-group-item"> </li>
+				        <li class="list-group-item"> </li>
+				    </ul>
+				</div>
+				
+				</div>
+				</div>
 			
-		<div id="left" style="width: 75%; float: left;" class="container">
-			 <div id="map"></div>
-   			 
-   			 
-   			 <div id="ch" style="width: 80%;height: 40%;">
-				<canvas id="line-chart-week"></canvas>
-			 </div>
-			 <div id="ch2" style="width: 80%;height: 40%;">
-				<canvas id="line-chart-day"></canvas>
-			 </div>
-		</div>
-		<div id="right" style="width: 25%; float: left;" class="panel panel-info">
-		    <div class="panel-heading">Stations Information</div>
-		    <div class="panel-body">
-		       <div id="information"></div>
-		    </div>
-		    <ul class="list-group">
-		        <li class="list-group-item"><div id="chart"></div></li>
-		        <li class="list-group-item">Bike</li>
-		        <li class="list-group-item">Bike</li>
-		        <li class="list-group-item">Bike</li>
-		        <li class="list-group-item">Bike</li>
-				<li class="list-group-item">Bike</li>
-		    </ul>
-		</div>
+    		<!-- <div id="main" style="width: 100%; margin-top: 100px;" >
+    			
+    		<div id="left" style="width: 75%; float: left;" class="container">
+    			<div class="embed-responsive embed-responsive-16by9">
+    				<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30031.0790604291!2d-6.26913962813857!3d53.344411610446045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e80ea27ac2f%3A0xa00c7a9973171a0!2sDublin%2C%20Ireland!5e0!3m2!1sen!2stw!4v1585896790018!5m2!1sen!2stw" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+    					
+    				</iframe>
+    			</div>
+    		</div>
+    		<div id="right" style="width: 25%; float: left;" class="panel panel-info">
+    			<div class="panel-heading">Bike Information</div>
+    			<div class="panel-body">
+    				<p>
+    					Dublin bikes are...
+    				</p>
+    			</div>
+    			<ul class="list-group">
+    				<li class="list-group-item"> </li>
+    				<li class="list-group-item"> </li>
+    				<li class="list-group-item"> </li>
+    				<li class="list-group-item"> </li>
+    				<li class="list-group-item"> </li>
+    				<li class="list-group-item"> </li>
+    			</ul>
+    		</div>
+    		
+    		</div>
+    	</div> -->
+    	<!-- <div> <img src="./img/Dublin_Bikes.jpg" width="25%" /> </div> -->
+    	
+    	<!-- rides -->
+    	<div class="rides">
+    		<div class="container">
+    			<div class="w3-agileits-rides-heading">
+    				<h3>Milestone</h3>
+    			</div>
+    			<div class="agileits-w3layouts-rides-grids">
+    				<div class="col-sm-4 rides-grid">
+    					<div class="rides-grid-info">
+    						<img src="../static/images/r1.jpg" alt="" />
+    						<h4>Google Maps has introduced real-time updates for Dublinbikes</h4>
+    						<p>DUBLIN COMMUTERS ARE now able to use Google Maps to check if a bike is free at their nearest Dublinbikes station.</p>
+    					</div>
+    				</div>
+    				<div class="col-sm-4 rides-grid">
+    					<div class="rides-grid-info">
+    						<img src="../static/images/r2.jpg" alt="" />
+    						<h4>Dublinbikes celebrates 10th Birthday of scheme</h4>
+    						<p>The scheme, which was the first of its kind in Ireland, initially set its first-year membership target at 5,000 subscribers.  The service proved to be a great success from the beginning with more than 1,000 people signing up to use the bicycles on the first day alone and over 11,000 applying for membership in the first fortnight.</p>
+    					</div>
+    				</div>
+    				<div class="col-sm-4 rides-grid">
+    					<div class="rides-grid-info">
+    						<img src="../static/images/r3.jpg" alt="" />
+    						<h4>Bike Share Rental Schemes</h4>
+    						<p>Dublin's hugely successful bike share rental scheme was introduced in September 2009 and has gone on to become one of the most succesful bike share rental schemes in the world.</p>
+    					</div>
+    				</div>
+    				<div class="clearfix"> </div>
+    			</div>
+    			<div class="agileits-w3layouts-rides-grids">
+    				<div class="col-sm-4 rides-grid">
+    					<div class="rides-grid-info">
+    						<img src="../static/images/r4.jpg" alt="" />
+    						<h4>Record year as 50,000 now using Dublin bike scheme</h4>
+    						<p>DUBLIN’S public bike-hire scheme has enjoyed a record-breaking year as an expansion has allowed it to top two million journeys.</p>
+    						
+    					</div>
+    				</div>
+    				<div class="col-sm-4 rides-grid">
+    					<div class="rides-grid-info">
+    						<img src="../static/images/r5.jpg" alt="" />
+    						<h4>Dublinbikes Station Opens in Grangegorman</h4>
+    						<p>Great news, more dublinbikes stations are coming to Dublin! This is another small step towards a more sustainable city and we heartily approve.</p>
+    						
+    					</div>
+    				</div>
+    				<div class="col-sm-4 rides-grid">
+    					<div class="rides-grid-info">
+    						<img src="../static/images/r6.jpg" alt="" />
+    						<h4>Dublin Commuters Can Now Use Their Leap Cards For Dublin Bikes Scheme</h4>
+    						<p>The initiative won’t allow people to pay for their bike trips from their LEAP Card account but rather it will allow them to hold their registration details for both schemes on the one card.</p>
+    					</div>
+    				</div>
+    				<div class="clearfix"> </div>
+    			</div>
+    		</div>
+    	</div>
+    	<!-- //rides -->
+    	
+    	<!-- footer -->
+    	<div class="footer">
+    		<div class="container">
+    			<div class="agile-footer-grids">
+    				<div class="col-md-3 w3-agile-footer-grid">
+    					<h3>About</h3>
+    					<p>Some safety recommendations and helpful tips to travel with complete peace of mind around the city on dublinbikes.</p>
+    				</div>
+    				<div class="col-md-3 w3-agile-footer-grid">
+    					<h3>Events</h3>
+    					<ul>
+    						<li>March 29th 2020 <a href="single.html">Covid-19 information</a></li>
+    						<li>February 26th 2020<a href="single.html">Temporary Station Closure</a></li>
+    						<li>January 30th 2020 <a href="single.html">Dublinbikes Service Update</a></li>
+    						<li>February 20th 2020 <a href="single.html">Dublinbikes intermittent service disruption</a></li>
+    						<li>October 17th 2019 <a href="single.html">KBC Dublin Marathon</a></li>
+    					</ul>
+    				</div>
+    				<div class="col-md-3 w3-agile-footer-grid">
+    					<h3>Navigation</h3>
+    					<ul>
+    						<li class="text"><a href="index.html">Home</a></li>
+    						<li class="text"><a href="about.html">About</a></li>
+    						<li class="text"><a href="short-codes.html">Short Codes</a></li>
+    						<li class="text"><a href="gallery.html">Gallery</a></li>
+    						<li class="text"><a href="training.html">Training</a></li>
+    						<li class="text"><a href="mail.html">Contact</a></li>
+    					</ul>
+    				</div>
+    				<div class="col-md-3 w3-agile-footer-grid">
+    					<h3>Newsletter</h3>
+    					<form action="#" method="post">
+    						<input type="email" id="mc4wp_email" name="EMAIL" placeholder="Enter your email here" required="">
+    						<input type="submit" value="Subscribe">
+    					</form>
+    				</div>
+    				<div class="clearfix"> </div>
+    			</div>
+    		</div>
+    	</div>
+    	<!-- //footer -->
+    	<!-- copyright -->
+    	<div class="copyright">
+    		<div class="container">
+    			<p>Copyright &copy; 2020.Group 4 All rights reserved.</p>
+    		</div>
+    	</div>
+    	<!-- //copyright -->
 		
-		</div>
-		<div> <img src="../static/img/Dublin_Bikes.jpg" width="25%" /> </div>
 		
-		<div class="jumbotron text-center" style="width: 100%;  height: 200px; clear:both; margin-bottom:0">
+		
+    
+	
+		<!-- <div> <img src="../static/img/Dublin_Bikes.jpg" width="25%" /> </div> -->
+		
+		<!-- <div class="jumbotron text-center" style="width: 100%;  height: 200px; clear:both; margin-bottom:0">
 		  <p>Copyright: Group4 </p>
 		  <p>3/April/2020 </p>
 		  <div>
@@ -80,7 +523,7 @@
 			  <a href="1"><img src="../static/img/6-twitter_4102580.png" class="img-circle" hspace="20"></a>
 			  <a href="1"><img src="../static/img/_Youtube_4362951.png" class="img-circle" hspace="20"></a>
 		  </div>
-		</div>
+		</div> -->
 	<script>
 		$("#mytab a").click(function(e){
 			e.preventDefault();
