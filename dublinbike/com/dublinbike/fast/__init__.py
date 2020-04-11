@@ -145,7 +145,6 @@ def get_daily(number):
     return jsonify(dic)
 
 
-
 def Get_Average(li):
     s = 0
     for item in li:     
