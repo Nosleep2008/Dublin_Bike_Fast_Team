@@ -105,7 +105,7 @@ def get_weekly(number):
         dic_stand[str(week)].append(available_bike_stands)
         dic_bike[str(week)].append(available_bikes)
         i = i + 1
-        
+    
     for i in range(0,7):
         dic_stand[str(i)] = Get_Average(dic_stand[str(i)])
         print(dic_stand[str(i)])
