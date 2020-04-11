@@ -101,7 +101,7 @@ def get_weekly(number):
         time = data[i][4]
         available_bike_stands = data[i][2]
         available_bikes = data[i][3]
-        week = datetime.strptime(time,"%Y-%m-%d %H:%M:%S").weekday()
+        week = time.weekday()
         dic_stand[str(week)].append(available_bike_stands)
         dic_bike[str(week)].append(available_bikes)
         i = i + 1
@@ -131,7 +131,7 @@ def get_daily(number):
         time = data[i][4]
         available_bike_stands = data[i][2]
         available_bikes = data[i][3]
-        hour = datetime.strptime(time,"%Y-%m-%d %H:%M:%S").hour
+        hour = time.hour
         dic_stand[str(hour)].append(available_bike_stands)
         dic_bike[str(hour)].append(available_bikes)
         i = i + 1
