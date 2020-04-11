@@ -17,8 +17,6 @@ import pandas as pd
 import pymysql
 import datetime
 
-
-
 def weather():
     db_mohan = pymysql.connect("bikesdata.cnqobaauuxez.us-east-1.rds.amazonaws.com", "admin", "rootadmin", "dbikes")
     cursor_mohan = db_mohan.cursor()

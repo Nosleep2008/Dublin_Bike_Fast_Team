@@ -146,8 +146,6 @@ def get_daily(number):
 
 
 
-
-
 def Get_Average(li):
     s = 0
     for item in li:     
