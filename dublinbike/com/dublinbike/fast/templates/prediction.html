@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Prediction</title>
+	<style>
+	 
+	</style>
+	<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script  src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>  
+	<link rel="stylesheet" href="../static/css/bootstrap.min.css" /> 
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- bootstrap-css -->
+	<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<!--// bootstrap-css -->
+	<!-- css -->
+	<link rel="stylesheet" href="../static/css/style.css" type="text/css" media="all" />
+	<!--// css -->
+	
+	<!-- font-awesome icons -->
+	<link href="../static/css/font-awesome.css" rel="stylesheet"> 
+	<!-- //font-awesome icons -->
+	<!-- font -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+	<!-- //font -->
+	<script src="../static/js/jquery-1.11.1.min.js"></script>
+	<script src="../static/js/bootstrap.js"></script>
+	<script src="../static/js/SmoothScroll.min.js"></script>
+	<script src="../static/js/jarallax.js"></script>	
+	</head>
+	<body>
+		<!-- banner -->
+		<div class="banner bg-about">
+			<div class="header-top about-header-top">
+				<div class="container banner-drop">
+					<div class="agile-logo">
+						<h1><a href="index.html">Dublin<span>Bike</span></a></h1>
+					</div>
+					<div class="header-right">
+							<nav>
+							  <ul>
+								<li >
+									<a href="map.html"><span>Home</span></a>
+								</li>
+								<li class="active">
+									<a href="#"><span>Prediction</span></a>
+								</li>
+								<li>
+									<a href="#"><span>Report</span></a>
+								</li>
+								<li>
+									<a href="#"><span>Gallery</span></a>
+								</li>
+								<li>
+									<a href="#"><span>Mail Us</span></a>
+								</li>
+								<li>
+									<a href="#"><span>Sign up</span></a>
+								</li>
+								<li>
+									<a href="#"><span>Log in</span></a>
+								</li>
+							  </ul>
+							</nav>
+							<div class="menu-icon"><span></span></div>
+					</div>
+					<div class="clearfix"> </div>
+					<script>
+						(function($){
+						  $(".menu-icon").on("click", function(){
+								$(this).toggleClass("open");
+								$(".container").toggleClass("nav-open");
+								$("nav ul li").toggleClass("animate");
+						  });
+						  
+						})(jQuery);
+					</script>
+				</div>
+			</div>
+			<div class="w3ls-heading">
+				<h2>Prediction</h2>	
+			</div>
+		</div>
+		<!-- //banner -->
+		
+		<!-- //select more detailed information -->
+		<div class="services">
+			<div class="container">
+				<div class="w3-training-heading">
+					<h2>Select details</h2>
+				</div>
+				<form action="#" method="POST">
+					<div style="padding: 8px 0">
+						Date:&nbsp;<select name="date" id="in-date" style="width: 100px"></select>&nbsp;
+						Hour:&nbsp;<select name="hour" id="in-hour" style="width: 50px"></select>&nbsp;
+					
+						Number:&nbsp;<select name="number"  style="width: 60px">
+							<option value="106">106</option>
+							<option value="108">108</option>
+							<option value="11">11</option>
+							<option value="112">112</option>
+							<option value="113">113</option>
+							<option value="114">114</option>
+							<option value="13">13</option>
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="23">23</option>
+							<option value="30">30</option>
+							<option value="31">31</option>
+							<option value="32">32</option>
+							<option value="42">42</option>
+							<option value="43">43</option>
+							<option value="45">45</option>
+							<option value="48">48</option>
+							<option value="52">52</option>
+							<option value="54">54</option>
+							<option value="55">55</option>
+							<option value="56">56</option>
+							<option value="6">6</option>
+							<option value="63">63</option>
+							<option value="67">67</option>
+							<option value="68">68</option>
+							<option value="72">72</option>
+							<option value="74">74</option>
+							<option value="81">81</option>
+							<option value="84">84</option>
+							<option value="87">87</option>
+							<option value="9">9</option>
+							<option value="90">90</option>
+							<option value="91">91</option>
+							<option value="98">98</option>
+							<option value="99">99</option>
+						</select>&nbsp;
+				
+						<input id="subLogin" type="submit" value="SUBMIT" />
+					</div>
+				<!--<button type="submit" formmethod="post" formaction="#">使用 POST 提交</button>-->
+				</form>
+				<!-- Number:&nbsp;<select class="input start-time"></select>
+				WeekDay:&nbsp;<select class="input end-time"></select> -->
+				<!-- <div class="bttn" id="Submit" style="margin-right: 15px;">Submit</div> -->
+				<!-- <select>
+					<option value="106">106</option>
+					<option value="108">108</option>
+					<option value="11">11</option>
+					<option value="112">112</option>
+					<option value="113">113</option>
+					<option value="114">114</option>
+					<option value="13">13</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="23">23</option>
+					<option value="30">30</option>
+					<option value="31">31</option>
+					<option value="32">32</option>
+					<option value="42">42</option>
+					<option value="43">43</option>
+					<option value="45">45</option>
+					<option value="48">48</option>
+					<option value="52">52</option>
+					<option value="54">54</option>
+					<option value="55">55</option>
+					<option value="56">56</option>
+					<option value="6">6</option>
+					<option value="63">63</option>
+					<option value="67">67</option>
+					<option value="68">68</option>
+					<option value="72">72</option>
+					<option value="74">74</option>
+					<option value="81">81</option>
+					<option value="84">84</option>
+					<option value="87">87</option>
+					<option value="9">9</option>
+					<option value="90">90</option>
+					<option value="91">91</option>
+					<option value="98">98</option>
+					<option value="99">99</option>
+					
+				</select> -->
+			</div>
+		</div>
+		<!-- //select more detailed information -->
+		
+		
+		<!-- Information Bar -->
+		<div class="w3layouts-training-top">
+			<div class="container">
+				<div class="w3-training-heading schedule-heading">
+					<h3>Information Bar</h3>
+				</div>
+				<div class="panel panel-primary">
+				    <div class="panel-heading">
+				        <h3 class="panel-title">Title</h3>
+				    </div>
+					
+				    <div class="panel-body">
+				       <table class="table">
+				               <th> Temperature</th><th>WeatherCondition</th><th>WindSpeed </th><th>AvailableStands</th><th>AvailableBikes</th>
+				               <tr><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+				               <tr><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+				       </table>
+				    </div>
+				</div>
+			</div>
+		</div>
+		<!-- //Information -->
+		
+		<!-- footer -->
+		<div class="footer">
+			<div class="container">
+				<div class="agile-footer-grids">
+					<div class="col-md-3 w3-agile-footer-grid">
+						<h3>About</h3>
+						<p>Some safety recommendations and helpful tips to travel with complete peace of mind around the city on dublinbikes.</p>
+					</div>
+					<div class="col-md-3 w3-agile-footer-grid">
+						<h3>Events</h3>
+						<ul>
+							<li>March 29th 2020 <a href="single.html">Covid-19 information</a></li>
+							<li>February 26th 2020<a href="single.html">Temporary Station Closure</a></li>
+							<li>January 30th 2020 <a href="single.html">Dublinbikes Service Update</a></li>
+							<li>February 20th 2020 <a href="single.html">Dublinbikes intermittent service disruption</a></li>
+							<li>October 17th 2019 <a href="single.html">KBC Dublin Marathon</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 w3-agile-footer-grid">
+						<h3>Navigation</h3>
+						<ul>
+							<li class="text"><a href="index.html">Home</a></li>
+							<li class="text"><a href="about.html">Prediction</a></li>
+							<li class="text"><a href="short-codes.html">Report</a></li>
+							<li class="text"><a href="gallery.html">Gallery</a></li>
+							<li class="text"><a href="training.html">Sign up</a></li>
+							<li class="text"><a href="mail.html">Contact</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 w3-agile-footer-grid">
+						<h3>Newsletter</h3>
+						<form action="#" method="post">
+							<input type="email" id="mc4wp_email" name="EMAIL" placeholder="Enter your email here" required="">
+							<input type="submit" value="Subscribe">
+						</form>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+		<!-- //footer -->
+		<!-- copyright -->
+		<div class="copyright">
+			<div class="container">
+				<p>Copyright &copy; 2020.Group 4 All rights reserved.</p>
+			</div>
+		</div>
+		<!-- //copyright -->
+
+
+		<script>
+            var day6='';
+			var nowDate=new Date();
+			for(var i=1 ;i<7;i++){
+			    var str=getDateStr(nowDate.getTime()+1000*60*60*24*i);
+			    if(i==6){
+                    day6=str
+				}
+			    if (i==1){
+                    document.querySelector('#in-date').innerHTML+='<option value="'+str+'" selected="selected">'+str+'</option>';
+				} else{
+                    document.querySelector('#in-date').innerHTML+='<option value="'+str+'">'+str+'</option>';
+				}
+			}
+            getHour(24)
+
+            document.querySelector('#in-date').addEventListener('change',function (val) {
+				if (this.value==day6){
+                    getHour(10)
+				} else{
+                    getHour(24)
+				}
+            })
+			
+			function getHour(num) {
+                document.querySelector('#in-hour').innerHTML=''
+				for(var i=0;i<num;i++){
+                    if (i==12){
+                        document.querySelector('#in-hour').innerHTML+='<option value="'+i+'" selected="selected">'+i+'</option>';
+                    } else{
+                        document.querySelector('#in-hour').innerHTML+='<option value="'+i+'">'+i+'</option>';
+                    }
+				}
+            }
+
+			function getDateStr(date) {
+			    var _date=new Date(date)
+                var Y = _date.getFullYear();
+                var M = (_date.getMonth()+1 < 10 ? '0'+(_date.getMonth()+1) : _date.getMonth()+1);
+                var D = (_date.getDate() < 10 ? '0' + (_date.getDate()) : _date.getDate());
+                return Y+'-'+M+'-'+D;
+            }
+		</script>
+		
+		
+	</body>
+</html>

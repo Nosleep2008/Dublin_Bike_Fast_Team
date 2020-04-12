@@ -62,160 +62,103 @@
 		</nav> -->
     <!--The div element for the map -->
     <!-- banner -->
-    	<div class="banner">
-    		
-    		<div class="w3ls-slider">
-    			<div class="header-top">
-    				<div class="container banner-drop">
-    					<div class="agile-logo">
-    						<h1><a href="index.html">Dublin<span>Bike</span></a></h1>
-    					</div>
-    					<div class="header-right">
-    							<nav>
-    							  <ul>
-    								<li class="active">
-    									<a href="index.html"><span>Home</span></a>
-    								</li>
-    								<li>
-    									<a href="about.html"><span>About</span></a>
-    								</li>
-    								<li>
-    									<a href="short-codes.html"><span>Short Codes</span></a>
-    								</li>
-    								<li>
-    									<a href="gallery.html"><span>Gallery</span></a>
-    								</li>
-    								<li>
-    									<a href="training.html"><span>Training</span></a>
-    								</li>
-    								<li>
-    									<a href="mail.html"><span>Mail Us</span></a>
-    								</li>
-    							  </ul>
-    							</nav>
-    							<div class="menu-icon"><span></span></div>
-    					</div>
-    					<div class="clearfix"> </div>
-    					<script>
-    						(function($){
-    						  $(".menu-icon").on("click", function(){
-    								$(this).toggleClass("open");
-    								$(".container").toggleClass("nav-open");
-    								$("nav ul li").toggleClass("animate");
-    						  });
-    						  
-    						})(jQuery);
-    					</script>
-    				</div>
+    <div class="banner bg-about">
+    	<div class="header-top about-header-top">
+    		<div class="container banner-drop">
+    			<div class="agile-logo">
+    				<h1><a href="index.html">Dublin<span>Bike</span></a></h1>
     			</div>
-    					<div class="page-header__content">
-    						<div class="text-bg">
-    							<svg>
-    								<defs>
-    									<mask id="mask" x="0" y="0" width="100%" height="100%">
-    										<rect id="alpha" x="0" y="0" width="100%" height="100%"/>
-    										<text id="title1" x="50%" y="30%" dy="1em" letter-spacing="0.02em">Bike</text>
-    									</mask>
-    									<mask id="mask-2" x="0" y="0" width="100%" height="100%">
-    										<rect id="alpha-2" x="-66%" y="0" width="85%" height="100%" transform="skewX(40)"/>
-    										<text id="title2" x="50%" y="30%" dy="1em" letter-spacing="0.02em">Bike</text>
-    									</mask>
-    									<mask id="mask-3" x="0" y="0" width="100%" height="100%">
-    										<rect id="alpha-3" x="-66%" y="0" width="70%" height="100%" transform="skewX(40)"/>
-    										<text id="title3" x="50%" y="30%" dy="1em" letter-spacing="0.02em">Bike</text>
-    									</mask>
-    								</defs>
-    								<rect id="base" x="0" y="0" width="100%" height="100%" mask="url(#mask)"/>
-    								<rect id="base-3" x="0" y="0" width="100%" height="100%" mask="url(#mask-2)"/>
-    								<rect id="base-4" x="0" y="0" width="100%" height="100%" mask="url(#mask-3)"/>
-    								<text id="title4" x="50%" y="30%" dy="1em" letter-spacing="0.02em">Bike</text>
-    							</svg>
-    						</div>
-    					</div>
-    				<div class="w3l-banner-grids">
-    					<div class="container">
-    						<div class="slider">
-    							<div class="callbacks_container">
-    								<ul class="rslides" id="slider4">
-    									<li>
-    										<div class="w3ls-text">
-    											<p>Every station has a minimum of 15 stands</p>
-    											<a href="about.html">More</a>
-    										</div>
-    									</li>
-    									<li>
-    										<div class="w3ls-text">
-    											<p>All terminals accept an Annual Card</p>
-    											<a href="about.html">More</a>
-    										</div>
-    									</li>
-    									<li>
-    										<div class="w3ls-text">
-    											<p>Locking system protect bikes</p>
-    											<a href="about.html">More</a>
-    										</div>
-    									</li>
-    									<li>
-    										<div class="w3ls-text">
-    											<p>It is easy to enjoy the service</p>
-    											<a href="about.html">More</a>
-    										</div>
-    									</li>
-    									<li>
-    										<div class="w3ls-text">
-    											<p>A number of terminals have credit card facilities</p>
-    											<a href="about.html">More</a>
-    										</div>
-    									</li>
-    									<li>
-    										<div class="w3ls-text">
-    											<p>enabling you to purchase a 3 Day Ticket</p>
-    											<a href="about.html">More</a>
-    										</div>
-    									</li>
-    								</ul>
-    							</div>
-    							<script src="../static/js/responsiveslides.min.js"></script>
-    							<script>
-    								// You can also use "$(window).load(function() {"
-    								$(function () {
-    								  // Slideshow 4
-    								  $("#slider4").responsiveSlides({
-    									auto: true,
-    									pager:true,
-    									nav:false,
-    									speed: 500,
-    									namespace: "callbacks",
-    									before: function () {
-    									  $('.events').append("<li>before event fired.</li>");
-    									},
-    									after: function () {
-    									  $('.events').append("<li>after event fired.</li>");
-    									}
-    								  });
-    							
-    								});
-    							 </script>
-    							<!--banner Slider starts Here-->
-    						</div>
-    					</div>
-    				</div>
-    		</div>
-    		<div class="social-grids">
-    			<div class="container">
-    				<div class="agileinfo-social-grids">
-    					<ul>
-    						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-    						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-    						<li><a href="#"><i class="fa fa-rss"></i></a></li>
-    						<li><a href="#"><i class="fa fa-vk"></i></a></li>
-    					</ul>
-    				</div>
+    			<div class="header-right">
+    					<nav>
+    					  <ul>
+    						<li class="active">
+    							<a href="map.html"><span>Home</span></a>
+    						</li>
+    						<li >
+    							<a href="#"><span>Prediction</span></a>
+    						</li>
+    						<li>
+    							<a href="#"><span>Report</span></a>
+    						</li>
+    						<li>
+    							<a href="#"><span>Gallery</span></a>
+    						</li>
+    						<li>
+    							<a href="#"><span>Mail Us</span></a>
+    						</li>
+    						<li>
+    							<a href="#"><span>Sign up</span></a>
+    						</li>
+							<li>
+								<a href="#"><span>Log in</span></a>
+							</li>
+    					  </ul>
+    					</nav>
+    					<div class="menu-icon"><span></span></div>
     			</div>
+    			<div class="clearfix"> </div>
+    			<script>
+    				(function($){
+    				  $(".menu-icon").on("click", function(){
+    						$(this).toggleClass("open");
+    						$(".container").toggleClass("nav-open");
+    						$("nav ul li").toggleClass("animate");
+    				  });
+    				  
+    				})(jQuery);
+    			</script>
     		</div>
     	</div>
-    	<!-- //banner -->
+    	<div class="w3ls-heading">
+    		<h2>Dublin Bikes</h2>	
+    	</div>
+    </div>
+    <!-- //banner -->
     	
+		<!-- map -->
+		<div class="services">
+		<div class="container">
+			<div class="w3layouts-services-heading">
+				<h2>Bike Map</h2>
+			</div>
+		
+			<div class="w3-services-grids"; id="main" style="width: 100%; ">
+				<div id="left" style="width: 75%; float: left;" class="container">
+					 <div id="map"></div>
+					 
+					
+					 
+				</div>
+				</div>	
+				<div id="right" style="width: 25%; float: left;" class="panel panel-info">
+				    <div class="panel-heading">Stations Information</div>
+				    <div class="panel-body">
+						
+				       <div id="information"></div>
+						
+				    </div>
+				    <ul class="list-group">
+				       <li class="list-group-item"> <div id="chart"></div></li> 
+						
+				        <!-- <li class="list-group-item"> </li>
+				        <li class="list-group-item"> </li>
+				        <li class="list-group-item"> </li>
+				        <li class="list-group-item"> </li>
+				        <li class="list-group-item"> </li> -->
+				    </ul>
+				</div>
+				<div style="width: 100%;">
+					 <div id="ch" style="width: 50%; float: left; height: 40%;">
+						<canvas id="line-chart-week"></canvas>
+					 </div>
+					 <div id="ch2" style="width: 50%; float: left; height: 40%;">
+						<canvas id="line-chart-day"></canvas>
+					 </div>
+				 </div>
+				</div>
+				
+				</div>
+		</div>
     	<!-- services -->
     	<div class="services">
     		<div class="container">
@@ -268,7 +211,7 @@
     	
     	
     	<!-- history -->
-    	<div class="jarallax history">
+    	<!-- <div class="jarallax history">
     		<div class="container">
     			<div class="agileinfo-history-grids">
     				<div class="slider">
@@ -319,7 +262,7 @@
     								});
     							 </script>
     							<!--banner Slider starts Here-->
-    			</div>
+    		<!-- 	</div>
     		</div>
     		<script type="text/javascript">
     			/* init Jarallax */
@@ -329,7 +272,7 @@
     				imgHeight: 768
     			})
     		</script>
-    	</div>
+    	</div> --> 
     	<!-- //history -->
     	
     	
@@ -424,42 +367,7 @@
     	</div>
     	<!-- //rides -->
     	
-		<!-- map -->
-		<div class="container">
-			<div class="w3layouts-services-heading">
-				<h2>Bike Map</h2>
-			</div>
-			<div class="w3-services-grids"; id="main" style="width: 100%; ">
-					
-				<div id="left" style="width: 75%; float: left;" class="container">
-					 <div id="map"></div>
-					 
-					 
-					 <div id="ch" style="width: 80%;height: 40%;">
-						<canvas id="line-chart-week"></canvas>
-					 </div>
-					 <div id="ch2" style="width: 80%;height: 40%;">
-						<canvas id="line-chart-day"></canvas>
-					 </div>
-				</div>
-				<div id="right" style="width: 25%; float: left;" class="panel panel-info">
-				    <div class="panel-heading">Stations Information</div>
-				    <div class="panel-body">
-						
-				       <div id="information"></div>
-				    </div>
-				    <ul class="list-group">
-				        <li class="list-group-item"> <div id="chart"></div></li>
-				        <li class="list-group-item"> </li>
-				        <li class="list-group-item"> </li>
-				        <li class="list-group-item"> </li>
-				        <li class="list-group-item"> </li>
-				        <li class="list-group-item"> </li>
-				    </ul>
-				</div>
-				
-				</div>
-				</div>
+		
 		
     	<!-- footer -->
     	<div class="footer">
@@ -483,10 +391,10 @@
     					<h3>Navigation</h3>
     					<ul>
     						<li class="text"><a href="index.html">Home</a></li>
-    						<li class="text"><a href="about.html">About</a></li>
-    						<li class="text"><a href="short-codes.html">Short Codes</a></li>
+    						<li class="text"><a href="about.html">Prediction</a></li>
+    						<li class="text"><a href="short-codes.html">Report</a></li>
     						<li class="text"><a href="gallery.html">Gallery</a></li>
-    						<li class="text"><a href="training.html">Training</a></li>
+    						<li class="text"><a href="training.html">Sign up</a></li>
     						<li class="text"><a href="mail.html">Contact</a></li>
     					</ul>
     				</div>
@@ -588,7 +496,7 @@ function initMap() {
 				    		    success: function(data) {
 				    		    	var b = $.isEmptyObject(data);
 				    		    	if(b){
-				    		    		info = "<h3>Position is "+window.info+" NO information about this station</h3>"+'<button type="button" onclick="displayChart('+window.number+')">displayChart_Weekly</button>'+'<button type="button" onclick="displayChart_Daily('+window.number+')">displayChart_Daily</button>';
+				    		    		info = "<h3>Position is "+window.info+" NO information about this station</h3>"+'<button type="button" onclick="displayChart('+window.number+') ;document.getElementById("light").style.display="block";document.getElementById("fade").style.display="block" ">displayChart_Weekly</button>'+'<button type="button" onclick="displayChart_Daily('+window.number+')">displayChart_Daily</button>';
 				    		    	}
 				    		    	else{
 				    		    		info = "This Station now have : "+data[0][2]+" available bike stands"+" <br> "+"This Station now have : "+data[0][3]+" available bikes"+'<button type="button" onclick="displayChart('+window.number+')">displayChart_Weekly</button>'+'<button type="button" onclick="displayChart_Daily('+window.number+')">displayChart_Daily</button>';
