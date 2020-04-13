@@ -36,32 +36,10 @@
 	<script src="../static/js/bootstrap.js"></script>
 	<script src="../static/js/SmoothScroll.min.js"></script>
 	<script src="../static/js/jarallax.js"></script>
+	<script src="../static/js/nightmode.js"></script>
   </head>
-  <body>
-    <!-- <div>
-			<img src="../static/img/logo.jpg" width="100%"  height="100px" class="img-rounded">
-		</div>
-		<nav class="navbar navbar-default " role="navigation">
-		    <div class="container-fluid">
-		    <div class="navbar-header">
-		        <a class="navbar-brand" href="#">Dublin Bikes</a>
-		    </div>
-		    <div>
-		        <ul id="mytab" class="nav navbar-nav " role= "tablist">
-		            <li role="presentation" class="active"><a href="">Home</a></li>
-		            <li role="presentation" ><a href="">Information</a></li>
-		            <li role="presentation" ><a href="">Contact us</a></li>
-		            
-		        </ul>
-				<ul class="nav navbar-nav navbar-right"> 
-				            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Register</a></li> 
-				            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> 
-				</ul> 
-		    </div>
-		    </div>
-		</nav> -->
-    <!--The div element for the map -->
-    <!-- banner -->
+  <body onload="displayAlert()">
+  
     <div class="banner bg-about">
     	<div class="header-top about-header-top">
     		<div class="container banner-drop">
@@ -72,10 +50,10 @@
     					<nav>
     					  <ul>
     						<li class="active">
-    							<a href="map.html"><span>Home</span></a>
+    							<a href="/map"><span>Home</span></a>
     						</li>
     						<li >
-    							<a href="#"><span>Prediction</span></a>
+    							<a href="/prediction"><span>Prediction</span></a>
     						</li>
     						<li>
     							<a href="#"><span>Report</span></a>
@@ -118,10 +96,8 @@
 		<!-- map -->
 		<div class="services">
 		<div class="container">
-			<div class="w3layouts-services-heading">
-				<h2>Bike Map</h2>
-			</div>
-		
+			
+			<div id="alert" class="alert alert-success"></div>
 			<div class="w3-services-grids"; id="main" style="width: 100%; ">
 				<div id="left" style="width: 75%; float: left;" class="container">
 					 <div id="map"></div>
@@ -140,11 +116,11 @@
 				    <ul class="list-group">
 				       <li class="list-group-item"> <div id="chart"></div></li> 
 						
-				        <!-- <li class="list-group-item"> </li>
 				        <li class="list-group-item"> </li>
 				        <li class="list-group-item"> </li>
+				        <li class="list-group-item">Bicycle Layer<button onclick="BLayerOpen()">On</button><button onclick="BLayerClose()">Off</button></li>
+				        <li class="list-group-item"></li>
 				        <li class="list-group-item"> </li>
-				        <li class="list-group-item"> </li> -->
 				    </ul>
 				</div>
 				<div style="width: 100%;">
@@ -156,7 +132,6 @@
 					 </div>
 				 </div>
 				</div>
-				a
 				</div>
 		</div>
     	<!-- services -->
@@ -207,107 +182,7 @@
     			</div>
     		</div>
     	</div>
-    	<!-- //services -->
-    	
-    	
-    	<!-- history -->
-    	<!-- <div class="jarallax history">
-    		<div class="container">
-    			<div class="agileinfo-history-grids">
-    				<div class="slider">
-    					<div class="callbacks_container">
-    						<ul class="rslides" id="slider3">
-    							<li>
-    								<div class="wthree-history-info">
-    									<h4>What can I do to avoid ‘Card Clashes’?</h4>
-    									<p>When taking out a bike at a station terminal Just Eat dublinbikes card holders should hold their associated card (Bike-share membership card or LEAP Card) up to the card reader on its own, and not in a wallet or purse containing other cards to avoid potential ‘card clashes.’</p>
-    									<a href="about.html">Read More</a>
-    								</div>
-    							</li>
-    							<li>
-    								<div class="wthree-history-info">
-    									<h4>Will I use www.leapcard.ie for any service relating to dublinbikes?</h4>
-    									<p>No. For convenience LEAP Card just allows you to use the one card for journeys taken on covered public transport modes and the bike-share scheme.</p>
-    									<a href="about.html">Read More</a>
-    								</div>
-    							</li>
-    							<li>
-    								<div class="wthree-history-info">
-    									<h4>Can dublinbikes affect the balance on my Leap Card e-purse?</h4>
-    									<p>Dublinbikes has no access whatsoever to the e-purse on your Leap Card. You cannot make payments to dublinbikes via your Leap Card. The card is used solely for identification purposes to identify the holder as the dublinbikes account holder in conjunction with your PIN.</p>
-    									<a href="about.html">Read More</a>
-    								</div>
-    							</li>
-    						</ul>
-    					</div>
-    				</div>
-    				<script>
-    								// "$(window).load(function() {"
-    								$(function () {
-    								  // Slideshow 4
-    								  $("#slider3").responsiveSlides({
-    									auto: true,
-    									pager:false,
-    									nav:false,
-    									speed: 500,
-    									namespace: "callbacks",
-    									before: function () {
-    									  $('.events').append("<li>before event fired.</li>");
-    									},
-    									after: function () {
-    									  $('.events').append("<li>after event fired.</li>");
-    									}
-    								  });
-    							
-    								});
-    							 </script>
-    							<!--banner Slider starts Here-->
-    		<!-- 	</div>
-    		</div>
-    		<script type="text/javascript">
-    			/* init Jarallax */
-    			$('.jarallax').jarallax({
-    				speed: 0.5,
-    				imgWidth: 1366,
-    				imgHeight: 768
-    			})
-    		</script>
-    	</div> --> 
-    	<!-- //history -->
-    	
-    	
-			
-    		<!-- <div id="main" style="width: 100%; margin-top: 100px;" >
-    			
-    		<div id="left" style="width: 75%; float: left;" class="container">
-    			<div class="embed-responsive embed-responsive-16by9">
-    				<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30031.0790604291!2d-6.26913962813857!3d53.344411610446045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e80ea27ac2f%3A0xa00c7a9973171a0!2sDublin%2C%20Ireland!5e0!3m2!1sen!2stw!4v1585896790018!5m2!1sen!2stw" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
-    					
-    				</iframe>
-    			</div>
-    		</div>
-    		<div id="right" style="width: 25%; float: left;" class="panel panel-info">
-    			<div class="panel-heading">Bike Information</div>
-    			<div class="panel-body">
-    				<p>
-    					Dublin bikes are...
-    				</p>
-    			</div>
-    			<ul class="list-group">
-    				<li class="list-group-item"> </li>
-    				<li class="list-group-item"> </li>
-    				<li class="list-group-item"> </li>
-    				<li class="list-group-item"> </li>
-    				<li class="list-group-item"> </li>
-    				<li class="list-group-item"> </li>
-    			</ul>
-    		</div>
-    		
-    		</div>
-    	</div> -->
-    	<!-- <div> <img src="./img/Dublin_Bikes.jpg" width="25%" /> </div> -->
-    	
-    	<!-- rides -->
+    
     	<div class="rides">
     		<div class="container">
     			<div class="w3-agileits-rides-heading">
@@ -416,25 +291,7 @@
     			<p>Copyright &copy; 2020.Group 4 All rights reserved.</p>
     		</div>
     	</div>
-    	<!-- //copyright -->
-		
-		
-		
-    
-	
-		<!-- <div> <img src="../static/img/Dublin_Bikes.jpg" width="25%" /> </div> -->
-		
-		<!-- <div class="jumbotron text-center" style="width: 100%;  height: 200px; clear:both; margin-bottom:0">
-		  <p>Copyright: Group4 </p>
-		  <p>3/April/2020 </p>
-		  <div>
-			  <a href="1"><img src="../static/img/facebook_4202110.png" class="img-circle" hspace="20"></a>
-			  <a href="1"><img src="../static/img/iconfinder_62-instagram_4202090.png" class="img-circle" hspace="20"></a>
-			  <a href="1"><img src="../static/img/github_2_2993772.png" class="img-circle" hspace="20"></a></a>
-			  <a href="1"><img src="../static/img/6-twitter_4102580.png" class="img-circle" hspace="20"></a>
-			  <a href="1"><img src="../static/img/_Youtube_4362951.png" class="img-circle" hspace="20"></a>
-		  </div>
-		</div> -->
+   
 	<script>
 		$("#mytab a").click(function(e){
 			e.preventDefault();
@@ -442,8 +299,81 @@
 		})
 	</script>	
 	
+<script>
+	function BLayerOpen(){
+		var bikeLayer = new google.maps.BicyclingLayer();
+		bikeLayer.setMap(window.map);
+		window.bikeLayer = bikeLayer
+	}
+	
+	function BLayerClose(){
+		window.bikeLayer.setMap(null);
+	}
 	
 	
+	
+</script>	
+<script>
+function setCookie(cname,cvalue)
+{
+  
+  document.cookie=cname + "=" + cvalue + "; expires=Thu, 18 Dec 2043 12:00:00 GMT; path=/";
+}
+
+function getCookie(cname)
+{
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0; i<ca.length; i++) 
+  {
+    var c = ca[i].trim();
+    if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+  }
+  return "error";
+}
+
+function displayAlert(){
+	<!--document.getElementById("alert").innerHTML--> 
+	position = getCookie('position');
+	number = getCookie('number');
+	if (number=="error"){
+		document.getElementById("alert").innerHTML = "Welcome New User ~~~ Try to click a Marker and Refresh Page. We will remember you !";
+	}
+	else{
+		window.position = position;
+		window.number = number;
+		console.log(position);
+		var p_data = {
+			"position": position
+		};
+    		$.ajax({
+    		    type: 'POST',
+    		    url: '/check_rest',
+    		    data: JSON.stringify(p_data),
+    		    contentType: 'application/json; charset=UTF-8',
+    		    dataType: 'json',
+    		    success: function(data) {
+    		    	var b = $.isEmptyObject(data);
+    		    	if(b){
+    		    		info = "<h3>Welcome Back!!! Your last selected station is "+ window.number +" NO information about this station</h3>";
+    		    	}
+    		    	else{
+    		    		info = "Welcome Back!!! Your last selected station is "+ window.number + ", now have : "+data[0][3]+" available bike bikes";
+    		    	}
+    		    	
+    		    	document.getElementById("alert").innerHTML = info;
+    		    },
+    		    error: function(xhr, type) {
+    		    	info = "Welcome Back!!! Your last selected station is "+window.number+" NO information about this station";
+    		    	document.getElementById("alert").innerHTML = info;
+    		    }
+    		});
+
+		}
+	
+	}
+
+</script>
 	
 <script>
 // Initialize and add the map
@@ -454,8 +384,8 @@ function initMap() {
   // The map, centered at Uluru
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 12, center: uluru});
-  // The marker, positioned at Uluru
- // var marker = new google.maps.Marker({position: uluru, map: map});   
+  window.map = map;
+  
   for (var i = 0; i<stations.length ; i++){
                	  var position = stations[i][0].split(",");
                   var name = stations[i][3];
@@ -471,22 +401,25 @@ function initMap() {
                       //position for each marker
                       position: red,
                       map: map,
-                      info: '('+stations[i][0]+')',
-                      number: number
+                      info: 'Station No.' + number+'<br> Name: '+name,
+                      number: number,
+                      coord: '('+stations[i][0]+')'
                       
                   });
 				  google.maps.event.addListener(marker, "click", function () {
 				      //use the variable "info" we populated earlier
-				      console.log(this.info)
-				      console.log(this.number)
+				      
 				      var p_data = {
-    						"position": this.info
+    						"position": this.coord
 						};
-				      window.info;
+				      window.coord;
 				      window.th;
 				      window.th = this;
-				      window.info = this.info;
+				      window.coord = this.coord;
 				      window.number = this.number;
+				      setCookie('number',window.number);
+	    		      setCookie('position',this.coord);
+				      console.log(this.coord)
 				    		$.ajax({
 				    		    type: 'POST',
 				    		    url: '/check_rest',
@@ -496,7 +429,7 @@ function initMap() {
 				    		    success: function(data) {
 				    		    	var b = $.isEmptyObject(data);
 				    		    	if(b){
-				    		    		info = "<h3>Position is "+window.info+" NO information about this station</h3>"+'<button type="button" onclick="displayChart('+window.number+') ;document.getElementById("light").style.display="block";document.getElementById("fade").style.display="block" ">displayChart_Weekly</button>'+'<button type="button" onclick="displayChart_Daily('+window.number+')">displayChart_Daily</button>';
+				    		    		info = "<h3>Position is "+window.coord+" NO information about this station</h3>"+'<button type="button" onclick="displayChart('+window.number+') ;document.getElementById("light").style.display="block";document.getElementById("fade").style.display="block" ">displayChart_Weekly</button>'+'<button type="button" onclick="displayChart_Daily('+window.number+')">displayChart_Daily</button>';
 				    		    	}
 				    		    	else{
 				    		    		info = "This Station now have : "+data[0][2]+" available bike stands"+" <br> "+"This Station now have : "+data[0][3]+" available bikes"+'<button type="button" onclick="displayChart('+window.number+')">displayChart_Weekly</button>'+'<button type="button" onclick="displayChart_Daily('+window.number+')">displayChart_Daily</button>';
@@ -506,7 +439,7 @@ function initMap() {
 				    		    	document.getElementById("information").innerHTML = info;
 				    		    },
 				    		    error: function(xhr, type) {
-				    		    	info = "Position is "+window.info+" NO information about this station"+'<button type="button" onclick="displayChart('+window.number+')">displayChart_Weekly</button>'+'<button type="button" onclick="displayChart_Daily('+window.number+')">displayChart_Daily</button>';
+				    		    	info = "Position is "+window.coord+" NO information about this station"+'<button type="button" onclick="displayChart('+window.number+')">displayChart_Weekly</button>'+'<button type="button" onclick="displayChart_Daily('+window.number+')">displayChart_Daily</button>';
 				    		    	document.getElementById("information").innerHTML = info;
 				    		    }
 				    		});

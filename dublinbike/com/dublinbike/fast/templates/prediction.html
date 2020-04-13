@@ -46,7 +46,7 @@
 							<nav>
 							  <ul>
 								<li >
-									<a href="map.html"><span>Home</span></a>
+									<a href="/map"><span>Home</span></a>
 								</li>
 								<li class="active">
 									<a href="#"><span>Prediction</span></a>
@@ -95,7 +95,7 @@
 				<div class="w3-training-heading">
 					<h2>Select details</h2>
 				</div>
-				<form action="#" method="POST">
+				<form id="form_pre" onsubmit="return false" action="#" method="POST">
 					<div style="padding: 8px 0">
 						Date:&nbsp;<select name="date" id="in-date" style="width: 100px"></select>&nbsp;
 						Hour:&nbsp;<select name="hour" id="in-hour" style="width: 50px"></select>&nbsp;
@@ -138,51 +138,10 @@
 							<option value="99">99</option>
 						</select>&nbsp;
 				
-						<input id="subLogin" type="submit" value="SUBMIT" />
+						<input id="subLogin" onclick="get_prediction()" type="submit" value="SUBMIT" />
 					</div>
-				<!--<button type="submit" formmethod="post" formaction="#">使用 POST </button>-->
 				</form>
-				<!-- Number:&nbsp;<select class="input start-time"></select>
-				WeekDay:&nbsp;<select class="input end-time"></select> -->
-				<!-- <div class="bttn" id="Submit" style="margin-right: 15px;">Submit</div> -->
-				<!-- <select>
-					<option value="106">106</option>
-					<option value="108">108</option>
-					<option value="11">11</option>
-					<option value="112">112</option>
-					<option value="113">113</option>
-					<option value="114">114</option>
-					<option value="13">13</option>
-					<option value="17">17</option>
-					<option value="18">18</option>
-					<option value="23">23</option>
-					<option value="30">30</option>
-					<option value="31">31</option>
-					<option value="32">32</option>
-					<option value="42">42</option>
-					<option value="43">43</option>
-					<option value="45">45</option>
-					<option value="48">48</option>
-					<option value="52">52</option>
-					<option value="54">54</option>
-					<option value="55">55</option>
-					<option value="56">56</option>
-					<option value="6">6</option>
-					<option value="63">63</option>
-					<option value="67">67</option>
-					<option value="68">68</option>
-					<option value="72">72</option>
-					<option value="74">74</option>
-					<option value="81">81</option>
-					<option value="84">84</option>
-					<option value="87">87</option>
-					<option value="9">9</option>
-					<option value="90">90</option>
-					<option value="91">91</option>
-					<option value="98">98</option>
-					<option value="99">99</option>
-						
-				</select> -->
+				
 			</div>
 		</div>
 		<!-- //select more detailed information -->
@@ -195,11 +154,11 @@
 					<h3>Information Bar</h3>
 				</div>
 				<div class="panel panel-primary">
-				    <div class="panel-heading">
-				        <h3 class="panel-title">Title</h3>
+				    <div id="title" class="panel-heading">
+				        <h3 class="panel-title">The future data of Station:</h3>
 				    </div>
 					
-				    <div class="panel-body">
+				    <div id="prediction_info" class="panel-body">
 				       <table class="table">
 				               <th> Temperature</th><th>WeatherCondition</th><th>WindSpeed </th><th>AvailableStands</th><th>AvailableBikes</th>
 				               <tr><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
@@ -264,12 +223,12 @@
 		<script>
             var day6='';
 			var nowDate=new Date();
-			for(var i=1 ;i<7;i++){
+			for(var i=0 ;i<5;i++){
 			    var str=getDateStr(nowDate.getTime()+1000*60*60*24*i);
 			    if(i==6){
                     day6=str
 				}
-			    if (i==1){
+			    if (i==0){
                     document.querySelector('#in-date').innerHTML+='<option value="'+str+'" selected="selected">'+str+'</option>';
 				} else{
                     document.querySelector('#in-date').innerHTML+='<option value="'+str+'">'+str+'</option>';
@@ -304,7 +263,42 @@
                 return Y+'-'+M+'-'+D;
             }
 		</script>
+		<script>
+		function get_prediction(){
+			document.getElementById("title").innerHTML = "<h3 class='panel-title'>Calculating and Loading.............</h3>"
+			var Data = $("#form_pre").serializeArray();
+			var Pram = {};		
+
+			for(var i =0;i < Data.length;i++)
+				 {
+				 	Pram[Data[i].name] = Data[i]['value'];
+				 }
+			number = Pram["number"]
+			title = "<h3 class='panel-title'>The future data of Station: No."+number+'</h3>'
+			$.ajax({
+	                type: 'POST',
+	                dataType: 'json',
+	                url: '/check_prediction' ,
+	                contentType: 'application/json; charset=UTF-8',
+	                data: JSON.stringify(Pram),
+	                success: function (result) {
+	                    console.log(result);
+	                    info = "<table class='table'>"+
+			               "<th> Temperature</th><th>WeatherCondition</th><th>WindSpeed </th><th>AvailableStands</th><th>AvailableBikes</th>"+
+			               "<tr><td>"+result["temp"]+" </td><td>"+result["condition"]+"</td><td>"+result["wind"]+" </td><td>"+result["prediction_stands"]+" </td><td>"+result["prediction_bikes"]+" </td></tr>"+
+			               "</table>";
+	                    
+	                    document.getElementById("prediction_info").innerHTML = info;
+	                    document.getElementById("title").innerHTML = title;
+	                },
+	                error : function() {
+	                    alert("Error");
+	                }
+	            });
+		}
 		
+		
+		</script>
 		
 	</body>
 </html>

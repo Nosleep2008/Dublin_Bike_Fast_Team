@@ -13,6 +13,7 @@ import pymysql
 from datetime import datetime
 from flask import Flask,url_for, g, jsonify,render_template, request
 from _operator import length_hint
+import KNN_Model
 app = Flask(__name__)
 '''
 Created on Mar 24, 2020
@@ -24,15 +25,12 @@ avali = {}
 
 @app.route('/')   
 def index():
-    print("hello")
     stations = get_static().get_json()
-    print("hello")
-    print(stations)
-    return render_template('index.html',station="123" ,map_key="AIzaSyDFJziVkEvhTBxI1JZ_sznFA_Kbm7FWLAM")
+    return render_template('map.html',stations = stations)
 
-@app.route('/hello')   
+@app.route('/prediction')   
 def hello():
-    return render_template('hello.html')
+    return render_template('prediction.html')
 
 @app.route('/map')   
 def map():
@@ -46,6 +44,20 @@ def check_rest():
     position = recieve_data['position']
     data = get_dynamic(position)
     return data
+
+@app.route('/check_prediction',methods=['POST'])
+def check_prediction():
+    recieve_data = request.get_json()
+    hour = recieve_data["hour"]
+    if int(hour) < 10:
+        hour = "0" + hour
+    date = recieve_data["date"]
+    number = recieve_data["number"]
+    print(hour,date,number)
+    dic = KNN_Model.prediction(number, date, hour)
+    return jsonify(dic)
+
+
 
 @app.route('/check_weekly',methods=['POST'])
 def check_weekly():
