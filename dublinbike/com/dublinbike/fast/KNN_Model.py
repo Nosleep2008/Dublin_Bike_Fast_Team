@@ -18,7 +18,8 @@ import pymysql
 from datetime import datetime, timedelta 
 import math
 
-
+def test():
+    pass
 
 def bubble_sort(nums):
     for i in range(5):
@@ -100,10 +101,10 @@ def prediction(number,date,time):
         else:
             d_time = (date_old - date_new).seconds/3600
         d_week = int(dic_pre['weekday'])-int(weekday_old)
-        #print(d_condition)
-        #print(d_wind)
-        #print(d_time)
-        #print(d_week)
+        print(d_condition)
+        print(d_wind)
+        print(d_time)
+        print(d_week)
         distance = math.sqrt(d_wind**2 + d_condition**2 + d_time**2 + d_week**2)
         li.append([distance,available_bikes,available_bike_stands])
         #print(li)
