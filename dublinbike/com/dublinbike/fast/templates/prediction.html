@@ -221,14 +221,14 @@
 
 
 		<script>
-            var day6='';
+            var day5='';
 			var nowDate=new Date();
 			for(var i=0 ;i<5;i++){
 			    var str=getDateStr(nowDate.getTime()+1000*60*60*24*i);
-			    if(i==6){
-                    day6=str
+			    if(i==4){
+                    day5=str
 				}
-			    if (i==0){
+			    if (i==1){
                     document.querySelector('#in-date').innerHTML+='<option value="'+str+'" selected="selected">'+str+'</option>';
 				} else{
                     document.querySelector('#in-date').innerHTML+='<option value="'+str+'">'+str+'</option>';
@@ -237,11 +237,11 @@
             getHour(24)
 
             document.querySelector('#in-date').addEventListener('change',function (val) {
-				if (this.value==day6){
+				/* if (this.value==day5){
                     getHour(10)
-				} else{
+				} else{ */
                     getHour(24)
-				}
+				/* } */
             })
 			
 			function getHour(num) {
