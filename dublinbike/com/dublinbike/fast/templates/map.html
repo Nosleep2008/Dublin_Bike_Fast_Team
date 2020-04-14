@@ -36,7 +36,6 @@
 	<script src="../static/js/bootstrap.js"></script>
 	<script src="../static/js/SmoothScroll.min.js"></script>
 	<script src="../static/js/jarallax.js"></script>
-	<script src="../static/js/nightmode.js"></script>
   </head>
   <body onload="displayAlert()">
   
@@ -342,7 +341,7 @@ function displayAlert(){
 	else{
 		window.position = position;
 		window.number = number;
-		console.log(position);
+		//console.log(position);
 		var p_data = {
 			"position": position
 		};
@@ -390,7 +389,7 @@ function initMap() {
                	  var position = stations[i][0].split(",");
                   var name = stations[i][3];
                   var number = stations[i][1];
-                  console.log(number)
+                  //console.log(number)
 				  var lati = Number(position[0]);
 				  var lngt = Number(position[1]);
 				  var red = {lat: lati, lng: lngt}
@@ -403,7 +402,7 @@ function initMap() {
                       map: map,
                       info: 'Station No.' + number+'<br> Name: '+name,
                       number: number,
-                      coord: '('+stations[i][0]+')'
+                      coord: stations[i][0]
                       
                   });
 				  google.maps.event.addListener(marker, "click", function () {
@@ -419,7 +418,7 @@ function initMap() {
 				      window.number = this.number;
 				      setCookie('number',window.number);
 	    		      setCookie('position',this.coord);
-				      console.log(this.coord)
+				      //console.log(this.coord)
 				    		$.ajax({
 				    		    type: 'POST',
 				    		    url: '/check_rest',
@@ -432,7 +431,7 @@ function initMap() {
 				    		    		info = "<h3>Position is "+window.coord+" NO information about this station</h3>"+'<button type="button" onclick="displayChart('+window.number+') ;document.getElementById("light").style.display="block";document.getElementById("fade").style.display="block" ">displayChart_Weekly</button>'+'<button type="button" onclick="displayChart_Daily('+window.number+')">displayChart_Daily</button>';
 				    		    	}
 				    		    	else{
-				    		    		info = "This Station now have : "+data[0][2]+" available bike stands"+" <br> "+"This Station now have : "+data[0][3]+" available bikes"+'<button type="button" onclick="displayChart('+window.number+')">displayChart_Weekly</button>'+'<button type="button" onclick="displayChart_Daily('+window.number+')">displayChart_Daily</button>';
+				    		    		info = "This Station now have : "+data[0][2]+" available bike stands"+" <br> "+"This Station now have : "+data[0][3]+" available bikes"+'<br><button type="button" onclick="displayChart('+window.number+')">displayChart_Weekly</button>'+'<br><button type="button" onclick="displayChart_Daily('+window.number+')">displayChart_Daily</button>';
 				    		    	}
 				    		    	
 				    		    	
@@ -542,7 +541,7 @@ function initMap() {
 		    	}
 		    	else{
 		    		info = 'success'
-		    		console.log(data_dic)
+		    		//console.log(data_dic)
 		    		PlotChart(data_dic)
 		    	}
 		    	
@@ -581,7 +580,7 @@ function initMap() {
 		    	}
 		    	else{
 		    		info = 'success'
-		    		console.log(data_dic)
+		    		//console.log(data_dic)
 		    		PlotChart_daily(data_dic)
 		    	}
 		    	

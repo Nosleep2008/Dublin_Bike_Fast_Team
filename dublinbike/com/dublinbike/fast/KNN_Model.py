@@ -117,7 +117,7 @@ def prediction(number,date,time):
         d_time = round(d_time,3)
         #print(d_condition)
         #print(d_wind)
-        print(d_time,end=" ")
+        #print(d_time,end=" ")
         #print(d_week)
         distance = math.sqrt(d_wind**2 + d_condition**2 + d_time**2 + d_week**2)
         li.append([distance,available_bikes,available_bike_stands])
