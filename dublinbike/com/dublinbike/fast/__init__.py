@@ -87,7 +87,7 @@ def get_static():
     return jsonify(data)
 
 def get_dynamic(position):
-    db = pymysql.connect("dbbike.cponz0wamutb.eu-west-1.rds.amazonaws.com", "junyi", "db123456", "dbbike")
+    db = pymysql.connect("dbike.cerj203fcxcq.eu-west-1.rds.amazonaws.com", "yuhao", "qwert2008", "dbike")
     cursor = db.cursor()
     sql="SELECT * FROM dynamic_data where position='" + position +"'"
     cursor.execute(sql)
@@ -120,9 +120,9 @@ def get_weekly(number):
     
     for i in range(0,7):
         dic_stand[str(i)] = Get_Average(dic_stand[str(i)])
-        print(dic_stand[str(i)])
+        #print(dic_stand[str(i)])
         dic_bike[str(i)] = Get_Average(dic_bike[str(i)])
-        print(dic_bike[str(i)])
+        #print(dic_bike[str(i)])
         dic[str(i)] = [dic_stand[str(i)], dic_bike[str(i)]]
     return jsonify(dic)
 
@@ -150,9 +150,9 @@ def get_daily(number):
         
     for i in range(0,24):
         dic_stand[str(i)] = Get_Average(dic_stand[str(i)])
-        print(dic_stand[str(i)])
+        #print(dic_stand[str(i)])
         dic_bike[str(i)] = Get_Average(dic_bike[str(i)])
-        print(dic_bike[str(i)])
+        #print(dic_bike[str(i)])
         dic[str(i)] = [dic_stand[str(i)], dic_bike[str(i)]]
     return jsonify(dic)
 
