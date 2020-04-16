@@ -382,7 +382,7 @@ function initMap() {
   var uluru = {lat: 53.3450475,lng: -6.266618};
   // The map, centered at Uluru
   var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 12, center: uluru});
+      document.getElementById('map'), {zoom: 13, center: uluru});
   window.map = map;
   
   for (var i = 0; i<stations.length ; i++){
@@ -401,6 +401,7 @@ function initMap() {
                       position: red,
                       map: map,
                       info: 'Station No.' + number+'<br> Name: '+name,
+                      name: name,
                       number: number,
                       coord: stations[i][0]
                       
@@ -415,8 +416,9 @@ function initMap() {
 				      window.th;
 				      window.th = this;
 				      window.coord = this.coord;
+				      window.name = this.name;
 				      window.number = this.number;
-				      setCookie('number',window.number);
+				      setCookie('number',window.name);
 	    		      setCookie('position',this.coord);
 				      //console.log(this.coord)
 				    		$.ajax({
