@@ -130,11 +130,11 @@ def prediction(number,date,time):
     prediction_stands = (int(li[0][2])*(1/li[0][0]) + int(li[1][2])*(1/li[1][0]) + int(li[2][2])*(1/li[2][0]) + int(li[3][2])*(1/li[3][0]) + int(li[4][2])*(1/li[4][0]))/weight
     dic = {}
     dic_w = {'1':'Clear','2':'Clouds','3':'Mist','4':'Drizzle','5':'Fog','6':'Rain','7':'Snow'}
-    dic['prediction_bikes']=prediction_bikes
-    dic['prediction_stands']=prediction_stands
+    dic['prediction_bikes']=int(prediction_bikes)
+    dic['prediction_stands']=int(prediction_stands)
     dic['condition'] = dic_w[str(dic_pre['condition'])]
     dic['wind'] = dic_pre['wind']
-    dic['temp'] = dic_pre['temp']
+    dic['temp'] = dic_pre['temp'] + 'K'
     return dic
 
 
