@@ -90,12 +90,12 @@
 		<div class="services">
 			<div class="container">
 				<div class="w3-training-heading">
-					<h2>Select Date and Station for Prediction</h2>
+					<h2>Select Time and Station for Prediction</h2>
 				</div>
 				<form id="form_pre" onsubmit="return false" action="#" method="POST">
 					<div style="padding: 8px 0">
-						Date:&nbsp;<select name="date" id="in-date" style="width: 105px"></select>&nbsp;
-						Hour:&nbsp;<select name="hour" id="in-hour" style="width: 55px"></select>&nbsp;
+						Date:&nbsp;<select name="date" id="in-date" style="width: 105px"></select>&nbsp;<br>
+						Hour:&nbsp;<select name="hour" id="in-hour" style="width: 55px"></select>&nbsp;<br>
 					
 						Number:&nbsp;<select name="number"  style="width: 230px">
 							<option value="106">No.106 RATHDOWN ROAD</option>
@@ -133,15 +133,27 @@
 							<option value="91">No.91 SOUTH DOCK ROAD</option>
 							<option value="98">No.98 FREDERICK STREET SOUTH</option>
 							<option value="99">No.99 CITY QUAY</option>
-						</select>&nbsp;
+						</select>&nbsp;<br><br>
 				
-						<input id="subLogin" onclick="get_prediction()" type="submit" value="Click to Predict" />
+						<input id="subLogin" onclick="get_prediction()" type="submit" value="Click to Predict" style="border-radius:25px;border-style:solid;border-width:5px;border-color:#1a4a72">
 					</div>
 				</form>
 				
 			</div>
 		</div>
 		<!-- //select more detailed information -->
+        <style>
+         select {
+         border: solid 2px #7A7A7A;
+         padding-right: 14px;
+         width: 215px;
+         height: 23px;
+         font-size: 15px;
+         font-family: "Microsoft YaHei", "宋体";
+         color: #1a4a72;
+         padding-left: 2px;
+         }
+         </style>
 		
 		
 		<!-- Information Bar -->
@@ -152,7 +164,7 @@
 				</div>
 				<div class="panel panel-primary">
 				    <div id="title" class="panel-heading">
-				        <h3 class="panel-title">The future data of Station:</h3>
+				        <h3 class="panel-title">The future data of Station is coming......(about 15 seconds to proceed)</h3>
 				    </div>
 					
 				    <div id="prediction_info" class="panel-body">
