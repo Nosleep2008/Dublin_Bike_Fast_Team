@@ -16,9 +16,9 @@ from _operator import length_hint
 import KNN_Model
 app = Flask(__name__)
 '''
-Created on Mar 24, 2020
+Created on Mar 20, 2020
 
-@author: Haniel Wang
+@author: Haniel Wang, CHEN PENG, Junyi ZHANG
 '''
 avali = {}
 
