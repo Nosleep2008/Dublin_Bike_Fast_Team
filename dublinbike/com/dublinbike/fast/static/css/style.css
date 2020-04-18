@@ -6,7 +6,7 @@ body a {
   -ms-transition: 0.5s all;
 }
 html, body{
-    font-size: 100%;
+    font-size: 110%;
 	font-family: 'Roboto Condensed', sans-serif;
 }
 /*-- banner --*/
@@ -575,7 +575,7 @@ html, body{
 	background: rgba(0, 0, 0, 0.7) !important;
 }
 .services{
-    padding: 4em 0;
+    padding: 5px 0;
     background: #FFFFFF;
 }
 .w3layouts-services-heading{
@@ -589,9 +589,9 @@ html, body{
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-.w3-services-grids {
-    margin: 4em 0 0 0;
-}
+/*.w3-services-grids {*/
+/*    margin: 4em 0 0 0;*/
+/*}*/
 .w3l-services-grid{
 	text-align:center;
 }

@@ -55,13 +55,10 @@
     							<a href="/prediction"><span>Prediction</span></a>
     						</li>
     						<li>
-    							<a href="#"><span>Report</span></a>
+    							<a href="http://www.dublinbikes.ie/Stations"><span>Official Website</span></a>
     						</li>
-    						<li>
-    							<a href="#"><span>Gallery</span></a>
-    						</li>
-    						<li>
-    							<a href="#"><span>Mail Us</span></a>
+                              <li>
+    							<a href="#"><span>Contact US</span></a>
     						</li>
     						<li>
     							<a href="#"><span>Sign up</span></a>
@@ -98,14 +95,11 @@
 			
 			<div id="alert" class="alert alert-success"></div>
 			<div class="w3-services-grids"; id="main" style="width: 100%; ">
-				<div id="left" style="width: 75%; float: left;" class="container">
+				<div id="left" style="width: 70%; float: right;" class="container">
 					 <div id="map"></div>
-					 
-					
-					 
-				</div>
-				</div>	
-				<div id="right" style="width: 25%; float: left;" class="panel panel-info">
+                </div>
+            </div>
+				<div id="right" style="width: 30%; float: left;" class="panel panel-info">
 				    <div class="panel-heading">Stations Information</div>
 				    <div class="panel-body">
 						
@@ -113,13 +107,9 @@
 						
 				    </div>
 				    <ul class="list-group">
-				       <li class="list-group-item"> <div id="chart"></div></li> 
-						
-				        <li class="list-group-item"> </li>
-				        <li class="list-group-item"> </li>
+				       <li class="list-group-item"> <div id="chart"></div></li>
+
 				        <li class="list-group-item">Bicycle Layer<button onclick="BLayerOpen()">On</button><button onclick="BLayerClose()">Off</button></li>
-				        <li class="list-group-item"></li>
-				        <li class="list-group-item"> </li>
 				    </ul>
 				</div>
 				<div style="width: 100%;">
@@ -130,9 +120,10 @@
 						<canvas id="line-chart-day"></canvas>
 					 </div>
 				 </div>
-				</div>
-				</div>
-		</div>
+        </div>
+        </div>
+
+
     	<!-- services -->
     	<div class="services">
     		<div class="container">
@@ -182,67 +173,65 @@
     		</div>
     	</div>
     
-    	<div class="rides">
-    		<div class="container">
-    			<div class="w3-agileits-rides-heading">
-    				<h3>Milestone</h3>
-    			</div>
-    			<div class="agileits-w3layouts-rides-grids">
-    				<div class="col-sm-4 rides-grid">
-    					<div class="rides-grid-info">
-    						<img src="../static/images/r1.jpg" alt="" />
-    						<h4>Google Maps has introduced real-time updates for Dublinbikes</h4>
-    						<p>DUBLIN COMMUTERS ARE now able to use Google Maps to check if a bike is free at their nearest Dublinbikes station.</p>
-    					</div>
-    				</div>
-    				<div class="col-sm-4 rides-grid">
-    					<div class="rides-grid-info">
-    						<img src="../static/images/r2.jpg" alt="" />
-    						<h4>Dublinbikes celebrates 10th Birthday of scheme</h4>
-    						<p>The scheme, which was the first of its kind in Ireland, initially set its first-year membership target at 5,000 subscribers.  The service proved to be a great success from the beginning with more than 1,000 people signing up to use the bicycles on the first day alone and over 11,000 applying for membership in the first fortnight.</p>
-    					</div>
-    				</div>
-    				<div class="col-sm-4 rides-grid">
-    					<div class="rides-grid-info">
-    						<img src="../static/images/r3.jpg" alt="" />
-    						<h4>Bike Share Rental Schemes</h4>
-    						<p>Dublin's hugely successful bike share rental scheme was introduced in September 2009 and has gone on to become one of the most succesful bike share rental schemes in the world.</p>
-    					</div>
-    				</div>
-    				<div class="clearfix"> </div>
-    			</div>
-    			<div class="agileits-w3layouts-rides-grids">
-    				<div class="col-sm-4 rides-grid">
-    					<div class="rides-grid-info">
-    						<img src="../static/images/r4.jpg" alt="" />
-    						<h4>Record year as 50,000 now using Dublin bike scheme</h4>
-    						<p>DUBLIN’S public bike-hire scheme has enjoyed a record-breaking year as an expansion has allowed it to top two million journeys.</p>
-    						
-    					</div>
-    				</div>
-    				<div class="col-sm-4 rides-grid">
-    					<div class="rides-grid-info">
-    						<img src="../static/images/r5.jpg" alt="" />
-    						<h4>Dublinbikes Station Opens in Grangegorman</h4>
-    						<p>Great news, more dublinbikes stations are coming to Dublin! This is another small step towards a more sustainable city and we heartily approve.</p>
-    						
-    					</div>
-    				</div>
-    				<div class="col-sm-4 rides-grid">
-    					<div class="rides-grid-info">
-    						<img src="../static/images/r6.jpg" alt="" />
-    						<h4>Dublin Commuters Can Now Use Their Leap Cards For Dublin Bikes Scheme</h4>
-    						<p>The initiative won’t allow people to pay for their bike trips from their LEAP Card account but rather it will allow them to hold their registration details for both schemes on the one card.</p>
-    					</div>
-    				</div>
-    				<div class="clearfix"> </div>
-    			</div>
-    		</div>
-    	</div>
-    	<!-- //rides -->
-    	
-		
-		
+{#    	<div class="rides">#}
+{#    		<div class="container">#}
+{#    			<div class="w3-agileits-rides-heading">#}
+{#    				<h3>Milestone</h3>#}
+{#    			</div>#}
+{#    			<div class="agileits-w3layouts-rides-grids">#}
+{#    				<div class="col-sm-4 rides-grid">#}
+{#    					<div class="rides-grid-info">#}
+{#    						<img src="../static/images/r1.jpg" alt="" />#}
+{#    						<h4>Google Maps has introduced real-time updates for Dublinbikes</h4>#}
+{#    						<p>DUBLIN COMMUTERS ARE now able to use Google Maps to check if a bike is free at their nearest Dublinbikes station.</p>#}
+{#    					</div>#}
+{#    				</div>#}
+{#    				<div class="col-sm-4 rides-grid">#}
+{#    					<div class="rides-grid-info">#}
+{#    						<img src="../static/images/r2.jpg" alt="" />#}
+{#    						<h4>Dublinbikes celebrates 10th Birthday of scheme</h4>#}
+{#    						<p>The scheme, which was the first of its kind in Ireland, initially set its first-year membership target at 5,000 subscribers.  The service proved to be a great success from the beginning with more than 1,000 people signing up to use the bicycles on the first day alone and over 11,000 applying for membership in the first fortnight.</p>#}
+{#    					</div>#}
+{#    				</div>#}
+{#    				<div class="col-sm-4 rides-grid">#}
+{#    					<div class="rides-grid-info">#}
+{#    						<img src="../static/images/r3.jpg" alt="" />#}
+{#    						<h4>Bike Share Rental Schemes</h4>#}
+{#    						<p>Dublin's hugely successful bike share rental scheme was introduced in September 2009 and has gone on to become one of the most succesful bike share rental schemes in the world.</p>#}
+{#    					</div>#}
+{#    				</div>#}
+{#    				<div class="clearfix"> </div>#}
+{#    			</div>#}
+{#    			<div class="agileits-w3layouts-rides-grids">#}
+{#    				<div class="col-sm-4 rides-grid">#}
+{#    					<div class="rides-grid-info">#}
+{#    						<img src="../static/images/r4.jpg" alt="" />#}
+{#    						<h4>Record year as 50,000 now using Dublin bike scheme</h4>#}
+{#    						<p>DUBLIN’S public bike-hire scheme has enjoyed a record-breaking year as an expansion has allowed it to top two million journeys.</p>#}
+{#    						#}
+{#    					</div>#}
+{#    				</div>#}
+{#    				<div class="col-sm-4 rides-grid">#}
+{#    					<div class="rides-grid-info">#}
+{#    						<img src="../static/images/r5.jpg" alt="" />#}
+{#    						<h4>Dublinbikes Station Opens in Grangegorman</h4>#}
+{#    						<p>Great news, more dublinbikes stations are coming to Dublin! This is another small step towards a more sustainable city and we heartily approve.</p>#}
+{#    						#}
+{#    					</div>#}
+{#    				</div>#}
+{#    				<div class="col-sm-4 rides-grid">#}
+{#    					<div class="rides-grid-info">#}
+{#    						<img src="../static/images/r6.jpg" alt="" />#}
+{#    						<h4>Dublin Commuters Can Now Use Their Leap Cards For Dublin Bikes Scheme</h4>#}
+{#    						<p>The initiative won’t allow people to pay for their bike trips from their LEAP Card account but rather it will allow them to hold their registration details for both schemes on the one card.</p>#}
+{#    					</div>#}
+{#    				</div>#}
+{#    				<div class="clearfix"> </div>#}
+{#    			</div>#}
+{#    		</div>#}
+{#    	</div>#}
+{#    	<!-- //rides -->#}
+
     	<!-- footer -->
     	<div class="footer">
     		<div class="container">
@@ -287,17 +276,21 @@
     	<!-- copyright -->
     	<div class="copyright">
     		<div class="container">
-    			<p>Copyright &copy; 2020.Group 4 All rights reserved.</p>
+    			<p>Group member: Yuhao WANG, CHEN PENG, Junyi ZHANG</p>
     		</div>
     	</div>
-   
+
+
+
 	<script>
 		$("#mytab a").click(function(e){
 			e.preventDefault();
 			$(this).tab("show");
 		})
 	</script>	
-	
+
+
+
 <script>
 	function BLayerOpen(){
 		var bikeLayer = new google.maps.BicyclingLayer();
