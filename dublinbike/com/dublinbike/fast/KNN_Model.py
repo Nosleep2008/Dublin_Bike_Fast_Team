@@ -1,7 +1,7 @@
 '''
 Created on Apr 13, 2020
 
-@author: Haniel Wang, CHEN PENG, Junyi ZHANG
+@author: Haniel Wang
 '''
 import sqlalchemy as sqla
 from sqlalchemy import create_engine
