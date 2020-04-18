@@ -134,7 +134,7 @@ def prediction(number,date,time):
     dic['prediction_stands']=int(prediction_stands)
     dic['condition'] = dic_w[str(dic_pre['condition'])]
     dic['wind'] = dic_pre['wind']
-    dic['temp'] = dic_pre['temp'] + 'K'
+    dic['temp'] = str(dic_pre['temp']) + 'K'
     return dic
 
 
