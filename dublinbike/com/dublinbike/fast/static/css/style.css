@@ -316,7 +316,6 @@ html, body{
     text-decoration: none;
     width: 40px;
     height: 40px;
-    background: transparent url("../images/arrows.png") no-repeat left top;
 }
  .callbacks_nav:hover{
   	opacity: 0.3;
@@ -1994,7 +1993,7 @@ button.btn1:hover{
 		font-size: 1.3em;
 	}
 	.services {
-		padding: 2em 0;
+		padding: 5px 0;
 	}
 	.w3-services-grids {
 		margin: 2em 0 0 0;
