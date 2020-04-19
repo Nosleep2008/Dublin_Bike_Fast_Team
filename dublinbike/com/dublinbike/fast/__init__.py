@@ -12,7 +12,6 @@ import pandas as pd
 import pymysql
 from datetime import datetime
 from flask import Flask,url_for, g, jsonify,render_template, request
-from _operator import length_hint
 import KNN_Model
 app = Flask(__name__)
 '''
